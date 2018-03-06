@@ -1,0 +1,7 @@
+{
+    "name": "WebPush",
+    "short_name": "WebPush",
+    "display": "standalone",
+    "gcm_sender_id": "794230719018",
+    "gcm_user_visible_only": true
+}

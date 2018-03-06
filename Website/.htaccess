@@ -1,0 +1,17 @@
+Options +FollowSymLinks  
+RewriteEngine On
+
+RewriteCond %{DOCUMENT_ROOT}/$1\.php -f [NC]
+RewriteRule ^(.+?)/?$ $1.php [NC, L]
+RewriteRule ^single/post/(.*)$ ./single.php?pid=$1 [L,NC]
+
+
+
+
+ErrorDocument 404 /404.php
+ErrorDocument 403 /403.php
+
+<FilesMatch ^((events|gallery|blog|contact)\.php$|(donate|blog-with-sidebar|campaign-grid)\.html$)$ >
+Order Allow,Deny
+Deny from all
+</FilesMatch>

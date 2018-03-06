@@ -1,0 +1,9 @@
+[24-Jan-2018 18:52:22 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '{' in /home/mustafa2/cs491-2.mustafaculban.net/api/generate/index.php on line 4
+[24-Jan-2018 18:52:51 Europe/Istanbul] PHP Warning:  require_once(../configApi/functions.php): failed to open stream: No such file or directory in /home/mustafa2/cs491-2.mustafaculban.net/api/generate/index.php on line 2
+[24-Jan-2018 18:52:51 Europe/Istanbul] PHP Fatal error:  require_once(): Failed opening required '../configApi/functions.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/mustafa2/cs491-2.mustafaculban.net/api/generate/index.php on line 2
+[24-Jan-2018 19:07:58 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '$accescode' (T_VARIABLE) in /home/mustafa2/cs491-2.mustafaculban.net/api/generate/index.php on line 6
+[24-Jan-2018 19:08:00 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '$accescode' (T_VARIABLE) in /home/mustafa2/cs491-2.mustafaculban.net/api/generate/index.php on line 6
+[24-Jan-2018 19:10:08 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '$accescode' (T_VARIABLE) in /home/mustafa2/cs491-2.mustafaculban.net/api/generate/index.php on line 6
+[24-Jan-2018 19:11:00 Europe/Istanbul] PHP Parse error:  syntax error, unexpected end of file in /home/mustafa2/cs491-2.mustafaculban.net/api/generate/index.php on line 69
+[24-Jan-2018 19:11:02 Europe/Istanbul] PHP Parse error:  syntax error, unexpected end of file in /home/mustafa2/cs491-2.mustafaculban.net/api/generate/index.php on line 69
+[24-Jan-2018 19:13:10 Europe/Istanbul] PHP Parse error:  syntax error, unexpected end of file in /home/mustafa2/cs491-2.mustafaculban.net/api/generate/index.php on line 69

@@ -1,0 +1,1 @@
+importScripts("https://bildirim.net/service-worker-434790286.js?subdomain=mustafa");

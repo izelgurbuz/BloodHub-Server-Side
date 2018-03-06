@@ -1,0 +1,8 @@
+[01-Dec-2017 14:03:17 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/mustafa2/cs491-2.mustafaculban.net/push/index.php on line 71
+[01-Dec-2017 14:03:36 Europe/Istanbul] PHP Notice:  Undefined index: key in /home/mustafa2/cs491-2.mustafaculban.net/push/index.php on line 2
+[01-Dec-2017 14:03:51 Europe/Istanbul] PHP Notice:  Undefined index: key in /home/mustafa2/cs491-2.mustafaculban.net/push/index.php on line 2
+[01-Dec-2017 18:19:01 Europe/Istanbul] PHP Notice:  Undefined index: key in /home/mustafa2/cs491-2.mustafaculban.net/push/index.php on line 2
+[03-Dec-2017 03:33:40 Europe/Istanbul] PHP Notice:  Undefined index: key in /home/mustafa2/cs491-2.mustafaculban.net/push/index.php on line 2
+[11-Dec-2017 11:33:35 Europe/Istanbul] PHP Notice:  Undefined index: key in /home/mustafa2/cs491-2.mustafaculban.net/push/index.php on line 2
+[20-Jan-2018 19:19:32 Europe/Istanbul] PHP Notice:  Undefined index: key in /home/mustafa2/cs491-2.mustafaculban.net/push/index.php on line 2
+[12-Feb-2018 10:58:47 Europe/Istanbul] PHP Notice:  Undefined index: key in /home/mustafa2/cs491-2.mustafaculban.net/push/index.php on line 2

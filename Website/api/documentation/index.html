@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://139.179.103.133:9966/#bloodhub -->
+<html class="gr__139_179_103_133"><style type="text/css" id="night-mode-pro-style"></style><link type="text/css" rel="stylesheet" id="night-mode-pro-link"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=11">
+    <title>BloodHub API Documentation </title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="./index_files/base.css" rel="stylesheet">
+    <link href="./index_files/style.css" rel="stylesheet">
+    <link href="./index_files/railscasts.css" rel="stylesheet">
+  </head>
+  <body data-gr-c-s-loaded="true"><script type="text/javascript" src="./index_files/livereload.js" async="" defer=""></script>
+    <!--START--><div id="app"><div class="container unlimiter"><div class="fixed-top fixed-right space-left16"><div class="fill-light col6 pin-right"></div></div><div class="space-top5 scroll-styled overflow-auto pad1 width16 sidebar fixed-left fill-dark dark"><div class="pad0x small"><div class="small pad0x quiet space-top1">Introduction</div><a href="http://139.179.103.133:9966/#bloodhub" class="line-height15 pad0x pad00y quiet block fill-lighten0 round">BloodHub</a><div class="small pad0x quiet space-top1">Example</div><a href="http://139.179.103.133:9966/#api" class="line-height15 pad0x pad00y quiet block ">API</a></div></div><div class="space-left16"><div class=""><div class="clearfix"><div data-title="BloodHub" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h2 id="bloodhub">BloodHub</h2>
+<p>This is our high-quality  API. This documentation is only for administrative purpose only. API won't be running without proper secret code taken by the administartion unit. </p>
+<p>Android and the iOS apps will be using this API channel to communicate with servers of the BloodHub.</p>
+</div></div><div data-title="API" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h2 id="api">API</h2>
+<p>Below are the fallback services that are used by the BloodHub Android and iOS apps.</p>
+</div></div><div data-title="List Users" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="list-users">List Users</h3>
+<p>Lists all users in the system. You need to have a proper <strong>secretCode</strong> to use the API Service.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>secretCode</code></td>
+<td>(
+<strong>required</strong>
+) the code taken from the administration</td>
+</tr>
+<tr>
+<td><code>available</code></td>
+<td>(
+<strong>optional</strong>
+)  takes 
+<strong><em>1</em></strong>
+ or 
+<strong><em>0</em></strong>
+ values. If not specified default 
+<em>1</em>
+.</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5"><div class="endpoint dark fill-dark round ">
+      <div class="round-left pad0y pad1x fill-lighten0 code small endpoint-method">GET</div>
+      <div class="pad0 code small endpoint-url">/api/v1/getUsers?available=<span class="strong">{available}</span>&amp;secretCode=<span class="strong">{secret_key}</span></div>
+    </div>
+<h4 id="example-request">Example request</h4>
+<pre class="hljs">$ curl http://cs491-2.mustafaculban.net/api/v1/getUsers?available={available}&amp;secretCode={secret_key}</pre>
+<h4 id="example-response">Example response</h4>
+<pre class="hljs">[  
+   {  
+      <span class="hljs-attr">"id"</span>:<span class="hljs-string">"1"</span>,
+      <span class="hljs-attr">"username"</span>:<span class="hljs-string">"mustafaculban"</span>,
+      <span class="hljs-attr">"firstname"</span>:<span class="hljs-string">"Mustafa"</span>,
+      <span class="hljs-attr">"surname"</span>:<span class="hljs-string">"Culban"</span>,
+      <span class="hljs-attr">"password"</span>:<span class="hljs-string">"hpwX8Xee9eXpZNDX9V6S/JO/2b43N2UyMGM4ZWFh"</span>,
+      <span class="hljs-attr">"salt"</span>:<span class="hljs-string">"77e20c8eaa"</span>,
+      <span class="hljs-attr">"email"</span>:<span class="hljs-string">"mustafaculban1@gmail.com"</span>,
+      <span class="hljs-attr">"identitiyNum"</span>:<span class="hljs-string">"xJScYofeE8AC2udPsDv8yRpPiCo5ZDNjZjg5YWUz"</span>,
+      <span class="hljs-attr">"identitySalt"</span>:<span class="hljs-string">"77e20c8eaa"</span>,
+      <span class="hljs-attr">"bloodType"</span>:<span class="hljs-string">"AB+"</span>,
+      <span class="hljs-attr">"birthdate"</span>:<span class="hljs-string">"16041995"</span>,
+      <span class="hljs-attr">"address"</span>:<span class="hljs-string">"denemeAdress"</span>,
+      <span class="hljs-attr">"telephone"</span>:<span class="hljs-string">"5396768149"</span>,
+      <span class="hljs-attr">"available"</span>:<span class="hljs-string">"1"</span>
+   },
+   {  
+      <span class="hljs-attr">"id"</span>:<span class="hljs-string">"2"</span>,
+      <span class="hljs-attr">"username"</span>:<span class="hljs-string">"karamusluk"</span>,
+      <span class="hljs-attr">"firstname"</span>:<span class="hljs-string">"Mustafa"</span>,
+      <span class="hljs-attr">"surname"</span>:<span class="hljs-string">"Culban"</span>,
+      <span class="hljs-attr">"password"</span>:<span class="hljs-string">"R8jB6Ra0YZPJI9MiV7+FBkaNLl5hY2Y2YzNjMWVm"</span>,
+      <span class="hljs-attr">"salt"</span>:<span class="hljs-string">"acf6c3c1ef"</span>,
+      <span class="hljs-attr">"email"</span>:<span class="hljs-string">"karamusluk@gmail.com"</span>,
+      <span class="hljs-attr">"identitiyNum"</span>:<span class="hljs-string">"bAEk/vbYJcaBpBzmE4zTsh1crXs0YWQ4NzEwMzJl"</span>,
+      <span class="hljs-attr">"identitySalt"</span>:<span class="hljs-string">"acf6c3c1ef"</span>,
+      <span class="hljs-attr">"bloodType"</span>:<span class="hljs-string">"AB-"</span>,
+      <span class="hljs-attr">"birthdate"</span>:<span class="hljs-string">"16041995"</span>,
+      <span class="hljs-attr">"address"</span>:<span class="hljs-string">"denemeAdress"</span>,
+      <span class="hljs-attr">"telephone"</span>:<span class="hljs-string">"05396768149"</span>,
+      <span class="hljs-attr">"available"</span>:<span class="hljs-string">"1"</span>
+   },
+   {  
+      <span class="hljs-attr">"id"</span>:<span class="hljs-string">"5"</span>,
+      <span class="hljs-attr">"username"</span>:<span class="hljs-string">"izelgurbuz"</span>,
+      <span class="hljs-attr">"firstname"</span>:<span class="hljs-string">"İzel"</span>,
+      <span class="hljs-attr">"surname"</span>:<span class="hljs-string">"Gürbüz"</span>,
+      <span class="hljs-attr">"password"</span>:<span class="hljs-string">"hFSjvZf3XjF/Mh1woJMz02Fm64swMmE1MjY3YjRj"</span>,
+      <span class="hljs-attr">"salt"</span>:<span class="hljs-string">"02a5267b4c"</span>,
+      <span class="hljs-attr">"email"</span>:<span class="hljs-string">"izelgurbuz@gmail.com"</span>,
+      <span class="hljs-attr">"identitiyNum"</span>:<span class="hljs-string">"mpNCD8HMBpY+k+DRGNv593TY3KcyMzE5ZGYzYWFl"</span>,
+      <span class="hljs-attr">"identitySalt"</span>:<span class="hljs-string">"02a5267b4c"</span>,
+      <span class="hljs-attr">"bloodType"</span>:<span class="hljs-string">"AB+"</span>,
+      <span class="hljs-attr">"birthdate"</span>:<span class="hljs-string">"11081995"</span>,
+      <span class="hljs-attr">"address"</span>:<span class="hljs-string">"Ankara Bilkent "</span>,
+      <span class="hljs-attr">"telephone"</span>:<span class="hljs-string">"5317803034"</span>,
+      <span class="hljs-attr">"available"</span>:<span class="hljs-string">"1"</span>
+   }
+]</pre>
+</div></div><div data-title="Create a User" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="create-a-user">Create a User</h3>
+<p>Creates a newuser.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>username</code></td>
+<td>(
+<strong>required</strong>
+) username of the user.</td>
+</tr>
+<tr>
+<td><code>firstname</code></td>
+<td>(
+<strong>required</strong>
+) name of the user.</td>
+</tr>
+<tr>
+<td><code>surname</code></td>
+<td>(
+<strong>required</strong>
+) surname of the user.</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>(
+<strong>required</strong>
+) password of the user. Need to be given as raw input, non-hashed.</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>(
+<strong>required</strong>
+) email of the user.</td>
+</tr>
+<tr>
+<td><code>identityNum</code></td>
+<td>(
+<strong>required</strong>
+) identitiy number of the user, both foreign and turkish citizen number are valid.</td>
+</tr>
+<tr>
+<td><code>bloodType</code></td>
+<td>(
+<strong>required</strong>
+) blood type of the user, should be given as 
+<strong>%2B</strong>
+ for + type of blood. check 
+<a href="http://krypted.com/utilities/html-encoding-reference/">encoding reference</a></td>
+</tr>
+<tr>
+<td><code>birthdate</code></td>
+<td>(
+<strong>required</strong>
+) birthdate of the user, should be given as this pattern: 
+<strong>ddmmYYYY</strong>
+.</td>
+</tr>
+<tr>
+<td><code>address</code></td>
+<td>(
+<strong>required</strong>
+) address of the user</td>
+</tr>
+<tr>
+<td><code>telephone</code></td>
+<td>(
+<strong>required</strong>
+) telephone of the user</td>
+</tr>
+<tr>
+<td><code>secretCode</code></td>
+<td>(
+<strong>required</strong>
+) the code taken from the administration</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5"><div class="endpoint dark fill-dark round ">
+      <div class="round-left pad0y pad1x fill-lighten0 code small endpoint-method">GET</div>
+      <div class="pad0 code small endpoint-url">/api/v1/register/<span class="strong">{request_body}</span></div>
+    </div>
+<h4 id="request-body">Request body</h4>
+<pre class="hljs">{
+  <span class="hljs-attr">"username"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"firstname"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"surname"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"password"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"email"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"identityNum"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"bloodType"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"birthdate"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"address"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"secretCode"</span>: <span class="hljs-string">"xxx"</span>
+}</pre>
+<h4 id="example-request-1">Example request</h4>
+<pre class="hljs">curl -X GET http://cs491-2.mustafaculban.net/api/v1/register/?username={username}&amp;firstname={firtsname}&amp;surname={surname}&amp;password={password}&amp;email={email}&amp;identityNum={identityNum}&amp;bloodType={bloodType}&amp;birthdate={birthdate}&amp;address={address}&amp;telephone={telephone}&amp;secretCode={secret_key}</pre>
+<h4 id="example-with-fake-id-response">Example with fake id response</h4>
+<pre class="hljs">{ 
+   <span class="hljs-attr">"error"</span>:<span class="hljs-string">"true"</span>,
+   <span class="hljs-attr">"error_msg"</span>:<span class="hljs-string">"This identitiy Number is fake"</span>
+}</pre>
+<h4 id="example-already-registered-user-response">Example already registered user response</h4>
+<pre class="hljs">{ 
+   <span class="hljs-attr">"error"</span>:<span class="hljs-string">"true"</span>,
+   <span class="hljs-attr">"error_msg"</span>:<span class="hljs-string">"User already existed with email: {email} and username: {username}"</span>
+}</pre>
+<h4 id="example-successful-response">Example successful response</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"false"</span>,
+    <span class="hljs-attr">"user"</span>: {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">7</span>,
+        <span class="hljs-attr">"username"</span>: <span class="hljs-string">"izelgurbuz"</span>,
+        <span class="hljs-attr">"firstname"</span>: <span class="hljs-string">"İzel"</span>,
+        <span class="hljs-attr">"surname"</span>: <span class="hljs-string">"Gürbüz"</span>,
+        <span class="hljs-attr">"email"</span>: <span class="hljs-string">"izelgurbuz1@gmail.com"</span>,
+        <span class="hljs-attr">"bloodType"</span>: <span class="hljs-string">" 0+"</span>,
+        <span class="hljs-attr">"birthdate"</span>: <span class="hljs-string">"11081995"</span>,
+        <span class="hljs-attr">"address"</span>: <span class="hljs-string">"denemeAdress"</span>,
+        <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"053178xx034"</span>,
+        <span class="hljs-attr">"available"</span>: <span class="hljs-number">0</span>
+    }
+}</pre>
+</div></div><div data-title="Login a user" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="login-a-user">Login a user</h3>
+<p>make a user login with a given parameters.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email</code></td>
+<td>(
+<strong>required</strong>
+) email of the registered user.</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>(
+<strong>required</strong>
+) password of the registered user.</td>
+</tr>
+<tr>
+<td><code>secretCode</code></td>
+<td>(
+<strong>required</strong>
+) the code taken from the administration.</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5"><div class="endpoint dark fill-dark round ">
+      <div class="round-left pad0y pad1x fill-lighten0 code small endpoint-method">GET</div>
+      <div class="pad0 code small endpoint-url">/api/v1/login/&amp;email=<span class="strong">{email}</span>&amp;password=<span class="strong">{password}</span>&amp;secretCode=<span class="strong">{secretCode}</span></div>
+    </div>
+<h4 id="example-request-2">Example request</h4>
+<pre class="hljs">curl -X GET <span class="hljs-string">"http://cs491-2.mustafaculban.net/api/v1/login/?email=xxx&amp;password=xxx&amp;secretCode=xxx"</span></pre>
+<h4 id="example-of-wrong-credentials">Example of wrong credentials</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"true"</span>,
+    <span class="hljs-attr">"error_msg"</span>: <span class="hljs-string">"Login credentials are wrong. Please try again!"</span>
+}</pre>
+<h4 id="example-of-successful-login">Example of successful login</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"false"</span>,
+    <span class="hljs-attr">"user"</span>: {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"username"</span>: <span class="hljs-string">"xxxxx"</span>,
+        <span class="hljs-attr">"firstname"</span>: <span class="hljs-string">"xxxx"</span>,
+        <span class="hljs-attr">"surname"</span>: <span class="hljs-string">"xxx"</span>,
+        <span class="hljs-attr">"email"</span>: <span class="hljs-string">"xxxxx@gmail.com"</span>,
+        <span class="hljs-attr">"bloodType"</span>: <span class="hljs-string">"AB+"</span>,
+        <span class="hljs-attr">"birthdate"</span>: <span class="hljs-string">"xxxx"</span>,
+        <span class="hljs-attr">"address"</span>: <span class="hljs-string">"xxxx"</span>,
+        <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"xxxx"</span>,
+        <span class="hljs-attr">"available"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"last_login_ip"</span>: <span class="hljs-string">"176.33.240.215"</span>,
+        <span class="hljs-attr">"last_login_date"</span>: <span class="hljs-string">"Wednesday, January 24th, 2018"</span>,
+        <span class="hljs-attr">"last_login_time"</span>: <span class="hljs-string">"11:15 AM"</span>
+    }
+}</pre>
+</div></div><div data-title="Retrieve a user" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="retrieve-a-user">Retrieve a user</h3>
+<p>Returns a single user with a given id.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>user_id</code></td>
+<td>(
+<strong>required</strong>
+) id of the desired user.</td>
+</tr>
+<tr>
+<td><code>secretCode</code></td>
+<td>(
+<strong>required</strong>
+) the code taken from the administration.</td>
+</tr>
+</tbody>
+</table>
+<p>Retrieve information about a single user.</p>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5"><div class="endpoint dark fill-dark round ">
+      <div class="round-left pad0y pad1x fill-lighten0 code small endpoint-method">GET</div>
+      <div class="pad0 code small endpoint-url">/api/v1/getUser/<span class="strong">{user_id}</span>/?secretCode=<span class="strong">{secretCode}</span></div>
+    </div>
+<h4 id="example-request-3">Example request</h4>
+<pre class="hljs">curl -X GET <span class="hljs-string">"http://cs491-2.mustafaculban.net/api/v1/getUser/{user_id}/?secretCode={secretCode}"</span></pre>
+<h4 id="example-response-1">Example response</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>,
+    <span class="hljs-attr">"username"</span>: <span class="hljs-string">"xxxxx"</span>,
+    <span class="hljs-attr">"firstname"</span>: <span class="hljs-string">"xxxx"</span>,
+    <span class="hljs-attr">"surname"</span>: <span class="hljs-string">"xxxx"</span>,
+    <span class="hljs-attr">"email"</span>: <span class="hljs-string">"xxxxx@gmail.com"</span>,
+    <span class="hljs-attr">"bloodType"</span>: <span class="hljs-string">"xxxx"</span>,
+    <span class="hljs-attr">"birthdate"</span>: <span class="hljs-string">"xxxxxxxx"</span>,
+    <span class="hljs-attr">"address"</span>: <span class="hljs-string">"xxxx"</span>,
+    <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"xxxxx"</span>,
+    <span class="hljs-attr">"available"</span>: <span class="hljs-string">"1"</span>,
+    <span class="hljs-attr">"last_login_ip"</span>: <span class="hljs-string">"xxx.xx.xxx.xx"</span>,
+    <span class="hljs-attr">"last_login_date"</span>: <span class="hljs-string">"Wednesday, January 24th, 2018"</span>,
+    <span class="hljs-attr">"last_login_time"</span>: <span class="hljs-string">"11:16 AM"</span>
+}</pre>
+</div></div><div data-title="Send Blood Request" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="send-blood-request">Send Blood Request</h3>
+<p>Sending the blood request via API. Whole Request body should be sent to request.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name_surname</code></td>
+<td>(
+<strong>required</strong>
+) the full name of the patient.</td>
+</tr>
+<tr>
+<td><code>notificationType</code></td>
+<td>(
+<strong>required</strong>
+) one of these 3 type of notification. {
+<em>mail</em>
+, 
+<em>sms</em>
+, 
+<em>push</em>
+}</td>
+</tr>
+<tr>
+<td><code>bloodType</code></td>
+<td>(
+<strong>required</strong>
+) blood type of the user, should be given as 
+<strong>%2B</strong>
+ for + type of blood. check 
+<a href="http://krypted.com/utilities/html-encoding-reference/">encoding reference</a></td>
+</tr>
+<tr>
+<td><code>location</code></td>
+<td>(
+<strong>required</strong>
+) the destination location of the hospital</td>
+</tr>
+<tr>
+<td><code>hospitalName</code></td>
+<td>(
+<strong>required</strong>
+) the full hospital name</td>
+</tr>
+<tr>
+<td><code>senderID</code></td>
+<td>(
+<strong>required</strong>
+) which user created that notification.</td>
+</tr>
+<tr>
+<td><code>secretCode</code></td>
+<td>(
+<strong>required</strong>
+) the code taken from the administration.</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5"><div class="endpoint dark fill-dark round ">
+      <div class="round-left pad0y pad1x fill-lighten0 code small endpoint-method">GET</div>
+      <div class="pad0 code small endpoint-url">/api/v1/sendBloodRequest/<span class="strong">{request_body}</span></div>
+    </div>
+<h4 id="request-body-1">Request body</h4>
+<pre class="hljs">{
+  <span class="hljs-attr">"name_surname"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"notificationType"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"bloodType"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"location"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"hospitalName"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"secretCode"</span>: <span class="hljs-string">"xxx"</span>
+}</pre>
+<h4 id="example-request-4">Example request</h4>
+<pre class="hljs">curl -X GET <span class="hljs-string">"http://cs491-2.mustafaculban.net/api/v1/sendBloodRequest/?name_surname={name_surname}&amp;notificationType={notification_type}&amp;bloodType={bloodType}&amp;location={location}&amp;hospitalName={hospitalName}&amp;senderID={senderID}&amp;secretCode={secretCode}"</span></pre>
+<h4 id="example-response-2">Example response</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">"success"</span>: <span class="hljs-string">"Message was sent to the nearby devices succesfully."</span>
+}</pre>
+</div></div><div data-title="Get Sent Notification by User" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="get-sent-notification-by-user">Get Sent Notification by User</h3>
+<p>Get created notification for a given user ID. This endpoint aims to bring the sent notification of a user with the given ID in the descending order of the <em>datestamp</em> and by default the fetched result is limited by <em>10</em>.
+<br><br>
+<strong><em>'msg'</em></strong> <em>field of the successful result is limited by 100 characters to make a light call of JSON object on the Android/iOS side.</em></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>senderID</code></td>
+<td>(
+<strong>required</strong>
+) User ID who we want to get the notification which are sent by him/her.</td>
+</tr>
+<tr>
+<td><code>limit</code></td>
+<td>(
+<strong>optional</strong>
+) limit the fetched data . It is 10 by default.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>(
+<strong>optional</strong>
+) type of the received notifications. Must be one of these 3: 
+<em><em>{'push', 'mail','sms'}</em></em></td>
+</tr>
+<tr>
+<td><code>secretCode</code></td>
+<td>(
+<strong>required</strong>
+) the code taken from the administration.</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5"><div class="endpoint dark fill-dark round ">
+      <div class="round-left pad0y pad1x fill-lighten0 code small endpoint-method">GET</div>
+      <div class="pad0 code small endpoint-url">api/v1/getSentNotification/<span class="strong">{senderID}</span>/&amp;secretCode=<span class="strong">{secretCode}</span>&amp;*limit=<span class="strong">{limit}</span>*&amp;*type=<span class="strong">{type}</span>*</div>
+    </div>
+<h4 id="example-request-5">Example request</h4>
+<pre class="hljs">curl -X GET <span class="hljs-string">"http://cs491-2.mustafaculban.net/api/v1/getSentNotification/1/?secretCode=xxxx&amp;limit=5"</span></pre>
+<h4 id="example-of-non-existing-user-request-by-id">Example of non existing user request by ID.</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"TRUE"</span>,
+    <span class="hljs-attr">"error_msg"</span>: <span class="hljs-string">"The user with the given ID does not exist."</span>
+}</pre>
+<h4 id="example-where-there-is-no-notification-by-the-given-user-id">Example where there is no notification by the given User ID.</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"TRUE"</span>,
+    <span class="hljs-attr">"error_msg"</span>: <span class="hljs-string">"There is no notification created by the given user ID."</span>
+}</pre>
+<h4 id="example-result-of-succesfull-get-request">Example result of succesfull GET request.</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"FALSE"</span>,
+    <span class="hljs-attr">"sentNotifications"</span>: [
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"16"</span>,
+            <span class="hljs-attr">"msg"</span>: <span class="hljs-string">"Ataturk Arastirma hastanesinde yatmakta olan Mustafa Culban hasta icin acil AB- grubu kan gerekmekte..."</span>,
+            <span class="hljs-attr">"sentUserID"</span>: <span class="hljs-string">"5"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"mail"</span>,
+            <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Mustafa Culban icin acil AB- kan ihtiyaci."</span>,
+            <span class="hljs-attr">"datestamp"</span>: <span class="hljs-string">"2018-02-22 23:48:07"</span>
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"15"</span>,
+            <span class="hljs-attr">"msg"</span>: <span class="hljs-string">"AtaturkArastirma hastanesinde yatmakta olan MustafaCulban hasta icin acil AB+ grubu kan gerekmektedi..."</span>,
+            <span class="hljs-attr">"sentUserID"</span>: <span class="hljs-string">"5"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"mail"</span>,
+            <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Mustafa Culban icin acil AB+ kan ihtiyaci."</span>,
+            <span class="hljs-attr">"datestamp"</span>: <span class="hljs-string">"2018-02-22 23:47:10"</span>
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"10"</span>,
+            <span class="hljs-attr">"msg"</span>: <span class="hljs-string">"Ataturk Arastirma hastanesinde yatmakta olan Mustafa Culban hasta icin acil AB- grubu kan gerekmekte..."</span>,
+            <span class="hljs-attr">"sentUserID"</span>: <span class="hljs-string">"5"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"push"</span>,
+            <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Mustafa Culban icin acil AB- kan ihtiyaci."</span>,
+            <span class="hljs-attr">"datestamp"</span>: <span class="hljs-string">"2018-02-22 22:05:03"</span>
+        }
+    ]
+}</pre>
+</div></div><div data-title="Get Received Notifications for a User" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="get-received-notifications-for-a-user">Get Received Notifications for a User</h3>
+<p>Get received notification for a given user ID. This endpoint aims to bring the received notification of a user with the given ID in the descending order of the <em>datestamp</em> and by default the fetched result is limited by <em>10</em>.
+<br><br>
+<strong><em>'msg'</em></strong> <em>field of the successful result is limited by 100 characters to make a light call of JSON object on the Android/iOS side.</em></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>senderID</code></td>
+<td>(
+<strong>required</strong>
+) User ID who we want to get the notification which are sent by him/her.</td>
+</tr>
+<tr>
+<td><code>limit</code></td>
+<td>(
+<strong>optional</strong>
+) limit the fetched data . It is 10 by default.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>(
+<strong>optional</strong>
+) type of the received notifications. Must be one of these 3: 
+<em><em>{'push', 'mail','sms'}</em></em></td>
+</tr>
+<tr>
+<td><code>secretCode</code></td>
+<td>(
+<strong>required</strong>
+) the code taken from the administration.</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5"><div class="endpoint dark fill-dark round ">
+      <div class="round-left pad0y pad1x fill-lighten0 code small endpoint-method">GET</div>
+      <div class="pad0 code small endpoint-url">api/v1/getReceivedNotification/<span class="strong">{senderID}</span>/&amp;secretCode=<span class="strong">{secretCode}</span>&amp;*limit=<span class="strong">{limit}</span>*&amp;*type=<span class="strong">{type}</span>*</div>
+    </div>
+<h4 id="example-request-6">Example request</h4>
+<pre class="hljs">curl -X GET <span class="hljs-string">"http://cs491-2.mustafaculban.net/api/v1/getSentNotification/1/?secretCode=xxxx&amp;limit=5"</span></pre>
+<h4 id="example-of-non-existing-user-request-by-id-1">Example of non existing user request by ID.</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"TRUE"</span>,
+    <span class="hljs-attr">"error_msg"</span>: <span class="hljs-string">"The user with the given ID does not exist."</span>
+}</pre>
+<h4 id="example-where-there-is-no-notification-by-the-given-user-id-1">Example where there is no notification by the given User ID.</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"TRUE"</span>,
+    <span class="hljs-attr">"error_msg"</span>: <span class="hljs-string">"There is no notification created by the given user ID."</span>
+}</pre>
+<h4 id="example-result-of-succesfull-get-request-1">Example result of succesfull GET request.</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"FALSE"</span>,
+    <span class="hljs-attr">"sentNotifications"</span>: [
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"16"</span>,
+            <span class="hljs-attr">"msg"</span>: <span class="hljs-string">"Ataturk Arastirma hastanesinde yatmakta olan Mustafa Culban hasta icin acil AB- grubu kan gerekmekte..."</span>,
+            <span class="hljs-attr">"sentUserID"</span>: <span class="hljs-string">"5"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"mail"</span>,
+            <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Mustafa Culban icin acil AB- kan ihtiyaci."</span>,
+            <span class="hljs-attr">"datestamp"</span>: <span class="hljs-string">"2018-02-22 23:48:07"</span>
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"15"</span>,
+            <span class="hljs-attr">"msg"</span>: <span class="hljs-string">"AtaturkArastirma hastanesinde yatmakta olan MustafaCulban hasta icin acil AB+ grubu kan gerekmektedi..."</span>,
+            <span class="hljs-attr">"sentUserID"</span>: <span class="hljs-string">"5"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"mail"</span>,
+            <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Mustafa Culban icin acil AB+ kan ihtiyaci."</span>,
+            <span class="hljs-attr">"datestamp"</span>: <span class="hljs-string">"2018-02-22 23:47:10"</span>
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"10"</span>,
+            <span class="hljs-attr">"msg"</span>: <span class="hljs-string">"Ataturk Arastirma hastanesinde yatmakta olan Mustafa Culban hasta icin acil AB- grubu kan gerekmekte..."</span>,
+            <span class="hljs-attr">"sentUserID"</span>: <span class="hljs-string">"5"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"push"</span>,
+            <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Mustafa Culban icin acil AB- kan ihtiyaci."</span>,
+            <span class="hljs-attr">"datestamp"</span>: <span class="hljs-string">"2018-02-22 22:05:03"</span>
+        }
+    ]
+}</pre>
+</div></div><div data-title="Add Event" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="add-event">Add Event</h3>
+<p>Adding event with API. These event will be shown on the android and iOS apps.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>(
+<strong>required</strong>
+) The full name of the event.</td>
+</tr>
+<tr>
+<td><code>city</code></td>
+<td>(
+<strong>required</strong>
+) City where this event takes place.</td>
+</tr>
+<tr>
+<td><code>content</code></td>
+<td>(
+<strong>required</strong>
+) Full content of the vent . Content can include 
+<strong>HTML</strong>
+ codes.</td>
+</tr>
+<tr>
+<td><code>latitude</code></td>
+<td>(
+<strong>required</strong>
+) Latitude of the event where it happens. Type should be 
+<em>Double</em></td>
+</tr>
+<tr>
+<td><code>longitude</code></td>
+<td>(
+<strong>required</strong>
+)  Longitude of the event where it happens. Type should be 
+<em>Double</em></td>
+</tr>
+<tr>
+<td><code>startDate</code></td>
+<td>(
+<strong>required</strong>
+) Time when this event starts</td>
+</tr>
+<tr>
+<td><code>endDate</code></td>
+<td>(
+<strong>required</strong>
+) Time when this event ends.</td>
+</tr>
+<tr>
+<td><code>secretCode</code></td>
+<td>(
+<strong>required</strong>
+) the code taken from the administration.</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5"><div class="endpoint dark fill-dark round ">
+      <div class="round-left pad0y pad1x fill-lighten0 code small endpoint-method">GET</div>
+      <div class="pad0 code small endpoint-url">/api/v1/addEvent/<span class="strong">{request_body}</span></div>
+    </div>
+<h4 id="request-body-2">Request body</h4>
+<pre class="hljs">{
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"city"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"content"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"startDate"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"endDate"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"latitude"</span>: <span class="hljs-number">11</span>,
+  <span class="hljs-attr">"longitude"</span>: <span class="hljs-number">11</span>
+}</pre>
+<h4 id="example-request-7">Example request</h4>
+<pre class="hljs">curl -X GET <span class="hljs-string">"http://cs491-2.mustafaculban.net/api/v1/addEvent/?name={name}&amp;city={city}&amp;latitude={latitude}&amp;longitude={longitude}&amp;content={content}&amp;startDate={startDate}&amp;endDate={endDate}&amp;secretCode={secretCode}"</span></pre>
+<h4 id="example-of-erroneous-response">Example of erroneous response</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"TRUE"</span>,
+    <span class="hljs-attr">"error_msg"</span>: <span class="hljs-string">"Error on saving event into database."</span>
+}</pre>
+<h4 id="example-of-succesful-response">Example of succesful response</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"FALSE"</span>,
+    <span class="hljs-attr">"success"</span>: <span class="hljs-string">"Event was added succesfully."</span>,
+    <span class="hljs-attr">"event"</span>: {
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Kan Deneme"</span>,
+        <span class="hljs-attr">"city"</span>: <span class="hljs-string">"Ankara"</span>,
+        <span class="hljs-attr">"content"</span>: <span class="hljs-string">"Bilkent de kan cadirimiza davetlisiniz."</span>,
+        <span class="hljs-attr">"latitude"</span>: <span class="hljs-string">"39.868043"</span>,
+        <span class="hljs-attr">"longitude"</span>: <span class="hljs-string">"32.749089"</span>,
+        <span class="hljs-attr">"startDate"</span>: <span class="hljs-string">"16.02.2018"</span>,
+        <span class="hljs-attr">"endDate"</span>: <span class="hljs-string">"15.04.2018"</span>
+    }
+}</pre>
+</div></div><div data-title="Get A Event" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="get-a-event">Get A Event</h3>
+<p>get event with a given id. If there is no event error message will be returned.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>event_id</code></td>
+<td>(
+<strong>required</strong>
+) preadded event id is required to fetch.</td>
+</tr>
+<tr>
+<td><code>secretCode</code></td>
+<td>(
+<strong>required</strong>
+) the code taken from the administration.</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5"><div class="endpoint dark fill-dark round ">
+      <div class="round-left pad0y pad1x fill-lighten0 code small endpoint-method">GET</div>
+      <div class="pad0 code small endpoint-url">api/v1/getEvent/<span class="strong">{event_id}</span>/&amp;secretCode=<span class="strong">{secretCode}</span></div>
+    </div>
+<h4 id="example-request-8">Example request</h4>
+<pre class="hljs">curl -X GET <span class="hljs-string">"http://cs491-2.mustafaculban.net/api/v1/getEvent/xx/?secretCode=xxxxx"</span></pre>
+<h4 id="example-of-non-existing-event-id">Example of non existing event id.</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"TRUE"</span>,
+    <span class="hljs-attr">"error_msg"</span>: <span class="hljs-string">"There is no event with the given ID."</span>
+}</pre>
+<h4 id="example-of-true-event-id">Example of true event id.</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"FALSE"</span>,
+    <span class="hljs-attr">"event"</span>: {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Bilkent Kan Cadiri"</span>,
+        <span class="hljs-attr">"city"</span>: <span class="hljs-string">"Ankara"</span>,
+        <span class="hljs-attr">"content"</span>: <span class="hljs-string">"Bilkent de kan cadirimiza davetlisiniz."</span>,
+        <span class="hljs-attr">"startDate"</span>: <span class="hljs-string">"15.02.2018"</span>,
+        <span class="hljs-attr">"endDate"</span>: <span class="hljs-string">"15.02.2018"</span>,
+        <span class="hljs-attr">"latitude"</span>: <span class="hljs-number">39.868043</span>,
+        <span class="hljs-attr">"longitude"</span>: <span class="hljs-number">32.749089</span>
+    }
+}</pre>
+</div></div><div data-title="Get Events" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="get-events">Get Events</h3>
+<p>get recently added events to the system.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>secretCode</code></td>
+<td>(
+<strong>required</strong>
+) the code taken from the administration.</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5"><div class="endpoint dark fill-dark round ">
+      <div class="round-left pad0y pad1x fill-lighten0 code small endpoint-method">GET</div>
+      <div class="pad0 code small endpoint-url">api/v1/getEvents/&amp;secretCode=<span class="strong">{secretCode}</span></div>
+    </div>
+<h4 id="example-request-9">Example request</h4>
+<pre class="hljs">curl -X GET <span class="hljs-string">"http://cs491-2.mustafaculban.net/api/v1/getEvents/?secretCode=xxxxx"</span></pre>
+<h4 id="example-of-non-existing-event-id-1">Example of non existing event id.</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"TRUE"</span>,
+    <span class="hljs-attr">"error_msg"</span>: <span class="hljs-string">"There are no events registered in the system."</span>
+}</pre>
+<h4 id="example-result-of-succesfull-get-request-2">Example result of succesfull GET request.</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"FALSE"</span>,
+    <span class="hljs-attr">"events"</span>: [
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"3"</span>,
+            <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Kan Deneme"</span>,
+            <span class="hljs-attr">"city"</span>: <span class="hljs-string">"Ankara"</span>,
+            <span class="hljs-attr">"content"</span>: <span class="hljs-string">"Bilkent de kan cadirimiza davetlisiniz."</span>,
+            <span class="hljs-attr">"startDate"</span>: <span class="hljs-string">"16.02.2018"</span>,
+            <span class="hljs-attr">"endDate"</span>: <span class="hljs-string">"15.04.2018"</span>,
+            <span class="hljs-attr">"latitude"</span>: <span class="hljs-string">"39.868043"</span>,
+            <span class="hljs-attr">"longitude"</span>: <span class="hljs-string">"32.749089"</span>
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>,
+            <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Bilkent Kan Cadiri"</span>,
+            <span class="hljs-attr">"city"</span>: <span class="hljs-string">"Ankara"</span>,
+            <span class="hljs-attr">"content"</span>: <span class="hljs-string">"Bilkent de kan cadirimiza davetlisiniz."</span>,
+            <span class="hljs-attr">"startDate"</span>: <span class="hljs-string">"15.02.2018"</span>,
+            <span class="hljs-attr">"endDate"</span>: <span class="hljs-string">"15.02.2018"</span>,
+            <span class="hljs-attr">"latitude"</span>: <span class="hljs-string">"39.868043"</span>,
+            <span class="hljs-attr">"longitude"</span>: <span class="hljs-string">"32.749089"</span>
+        }
+    ]
+}</pre>
+</div></div><div data-title="Add Blog Post" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="add-blog-post">Add Blog Post</h3>
+<p>Add a post into database via this endpoint.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>post_title</code></td>
+<td>(
+<strong>required</strong>
+) Descriptive post title of the blog post.</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td>(
+<strong>required</strong>
+) date when that blog post is posted.</td>
+</tr>
+<tr>
+<td><code>post_text</code></td>
+<td>(
+<strong>required</strong>
+) Main text field of the blog post. It supports HTML tags.</td>
+</tr>
+<tr>
+<td><code>image_link</code></td>
+<td><strong>(<em>optional</em> )</strong>
+ ph oto link of the post. If there is a header image to be added, should be send over API.</td>
+</tr>
+<tr>
+<td><code>active</code></td>
+<td>(
+<strong>required</strong>
+) indication of whether posted blog post is shown on the Blog page.</td>
+</tr>
+<tr>
+<td><code>userid</code></td>
+<td>(
+<strong>required</strong>
+) user id which the post belongs to.</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5"><div class="endpoint dark fill-dark round ">
+      <div class="round-left pad0y pad1x fill-lighten0 code small endpoint-method">GET</div>
+      <div class="pad0 code small endpoint-url">api/v1/addBlogPost/&amp;secretCode=<span class="strong">{secretCode}</span>&amp;<span class="strong">{request_body}</span></div>
+    </div>
+<h4 id="request-body-3">Request body</h4>
+<pre class="hljs">{
+  <span class="hljs-attr">"post_title"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"date"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"post_text"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"image_link"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"active"</span>: x,
+  <span class="hljs-attr">"userid"</span>: xx
+}</pre>
+<h4 id="example-request-10">Example request</h4>
+<pre class="hljs">curl -X GET <span class="hljs-string">"http://cs491-2.mustafaculban.net/api/v1/addBlogPost/?secretCode=abc&amp;post_title=Deneme&amp;date=15.02.2018&amp;post_text=deneme%20text%20yazisi&amp;image_link=http://google.com&amp;active=1&amp;userid=1"</span></pre>
+<h4 id="example-of-non-existing-event-id-2">Example of non existing event id.</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"TRUE"</span>,
+    <span class="hljs-attr">"error_msg"</span>: <span class="hljs-string">"Error saving blog post into database ."</span>
+}</pre>
+<h4 id="example-of-postin-blog-post-to-api">Example of postin blog post to API.</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"FALSE"</span>,
+    <span class="hljs-attr">"success"</span>: <span class="hljs-string">"Blog Post was added succesfully."</span>,
+    <span class="hljs-attr">"post"</span>: {
+        <span class="hljs-attr">"post_title"</span>: <span class="hljs-string">"Deneme"</span>,
+        <span class="hljs-attr">"post_text"</span>: <span class="hljs-string">"deneme text yazisi"</span>,
+        <span class="hljs-attr">"image_link"</span>: <span class="hljs-string">"http:\/\/google.com"</span>,
+        <span class="hljs-attr">"date"</span>: <span class="hljs-string">"15.02.2018"</span>,
+        <span class="hljs-attr">"active"</span>: <span class="hljs-string">"1"</span>
+    }
+}</pre>
+</div></div><div data-title="Get A Blog post" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="get-a-blog-post">Get A Blog post</h3>
+<p>get blog post with a given id. If there is no post error message will be returned.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>post_id</code></td>
+<td>(
+<strong>required</strong>
+) blog post id is required to fetch.</td>
+</tr>
+<tr>
+<td><code>secretCode</code></td>
+<td>(
+<strong>required</strong>
+) the code taken from the administration.</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5"><div class="endpoint dark fill-dark round ">
+      <div class="round-left pad0y pad1x fill-lighten0 code small endpoint-method">GET</div>
+      <div class="pad0 code small endpoint-url">api/v1/getBlogPost/<span class="strong">{post_id}</span>/&amp;secretCode=<span class="strong">{secretCode}</span></div>
+    </div>
+<h4 id="example-request-11">Example request</h4>
+<pre class="hljs">curl -X GET <span class="hljs-string">"http://cs491-2.mustafaculban.net/api/v1/getBlogPost/xx/?secretCode=xx"</span></pre>
+<h4 id="example-of-non-existing-event-id-3">Example of non existing event id.</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"TRUE"</span>,
+    <span class="hljs-attr">"error_msg"</span>: <span class="hljs-string">"There is no blog post with the given ID."</span>
+}</pre>
+<h4 id="example-of-true-event-id-1">Example of true event id.</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"FALSE"</span>,
+    <span class="hljs-attr">"post"</span>: {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"uid"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"post_title"</span>: <span class="hljs-string">"Blood Connects Us All in a Soul"</span>,
+        <span class="hljs-attr">"post_text"</span>: <span class="hljs-string">"In many countries, demand exceeds supply, and blood services face the challenge of making blood available for patient. "</span>,
+        <span class="hljs-attr">"post_long_text"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"image_link"</span>: <span class="hljs-string">"images\/blog_1.jpg"</span>,
+        <span class="hljs-attr">"post_link"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"post_date"</span>: <span class="hljs-string">"April 4, 2017"</span>,
+        <span class="hljs-attr">"active"</span>: <span class="hljs-number">1</span>
+    }
+}</pre>
+</div></div><div data-title="Get Blog Posts" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="get-blog-posts">Get Blog Posts</h3>
+<p>get recently added blog posts to the system ( limited by recent 10 posts.).</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>limit</code></td>
+<td><strong>(<em>optional</em>)</strong>
+ limit the query result. by default it is 10.</td>
+</tr>
+<tr>
+<td><code>secretCode</code></td>
+<td>(
+<strong>required</strong>
+) the code taken from the administration.</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5"><div class="endpoint dark fill-dark round ">
+      <div class="round-left pad0y pad1x fill-lighten0 code small endpoint-method">GET</div>
+      <div class="pad0 code small endpoint-url">api/v1/getBlogPosts/&amp;secretCode=<span class="strong">{secretCode}</span></div>
+    </div>
+<h4 id="example-request-12">Example request</h4>
+<pre class="hljs">curl -X GET <span class="hljs-string">"http://cs491-2.mustafaculban.net/api/v1/getBlogPosts/?secretCode=xxxxx"</span></pre>
+<h4 id="result-of-there-is-no-post-in-the-system">Result of there is no post in the system..</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"TRUE"</span>,
+    <span class="hljs-attr">"error_msg"</span>: <span class="hljs-string">"There are no blog posts registered in the system."</span>
+}</pre>
+<h4 id="example-result-of-succesfull-get-request-3">Example result of succesfull GET request.</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"FALSE"</span>,
+    <span class="hljs-attr">"posts"</span>: [
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"3"</span>,
+            <span class="hljs-attr">"uid"</span>: <span class="hljs-string">"1"</span>,
+            <span class="hljs-attr">"post_title"</span>: <span class="hljs-string">"Why Should I donate Blood ?"</span>,
+            <span class="hljs-attr">"post_text"</span>: <span class="hljs-string">"Blood is the most precious gift that anyone can give to another person.Donating blood not only saves the life also donors."</span>,
+            <span class="hljs-attr">"post_long_text"</span>: <span class="hljs-string">""</span>,
+            <span class="hljs-attr">"image_link"</span>: <span class="hljs-string">"images\/blog_3.jpg"</span>,
+            <span class="hljs-attr">"post_link"</span>: <span class="hljs-string">""</span>,
+            <span class="hljs-attr">"post_date"</span>: <span class="hljs-string">"April 4, 2017"</span>,
+            <span class="hljs-attr">"active"</span>: <span class="hljs-string">"1"</span>
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"2"</span>,
+            <span class="hljs-attr">"uid"</span>: <span class="hljs-string">"1"</span>,
+            <span class="hljs-attr">"post_title"</span>: <span class="hljs-string">"Give Blood and Save three Lives"</span>,
+            <span class="hljs-attr">"post_text"</span>: <span class="hljs-string">"To save a life, you don't need to use muscle. By donating just one unit of blood, you can save three lives or even several lives."</span>,
+            <span class="hljs-attr">"post_long_text"</span>: <span class="hljs-string">""</span>,
+            <span class="hljs-attr">"image_link"</span>: <span class="hljs-string">"images\/blog_2.jpg"</span>,
+            <span class="hljs-attr">"post_link"</span>: <span class="hljs-string">""</span>,
+            <span class="hljs-attr">"post_date"</span>: <span class="hljs-string">"April 4, 2017"</span>,
+            <span class="hljs-attr">"active"</span>: <span class="hljs-string">"1"</span>
+        }
+    ]
+}</pre>
+</div></div><div data-title="Create EM5 List" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="create-em5-list">Create EM5 List</h3>
+<p>This endpoint is used to create Emergency Five(EM5) list for a specific user.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ownerID</code></td>
+<td>(
+<strong>required</strong>
+) ID for the user who is creating his/her EM5 List for the first time.</td>
+</tr>
+<tr>
+<td><code>firstID</code></td>
+<td>(
+<strong>required</strong>
+) First User Id for EM5 list  for the owner list.</td>
+</tr>
+<tr>
+<td><code>secondID</code></td>
+<td>(
+<strong>optional</strong>
+) Second User Id for EM5 list  for the owner list.</td>
+</tr>
+<tr>
+<td><code>thirdID</code></td>
+<td>(
+<strong>optional</strong>
+) Third User Id for EM5 list  for the owner list.</td>
+</tr>
+<tr>
+<td><code>fourthID</code></td>
+<td><strong>(<em>optional</em> )</strong>
+ Fourth User Id for EM5 list  for the owner list.</td>
+</tr>
+<tr>
+<td><code>fifthID</code></td>
+<td>(
+<strong>optional</strong>
+) Fifth User Id for EM5 list  for the owner list.</td>
+</tr>
+<tr>
+<td><code>secretCode</code></td>
+<td>(
+<strong>optional</strong>
+) the code taken from the administration.</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5"><div class="endpoint dark fill-dark round ">
+      <div class="round-left pad0y pad1x fill-lighten0 code small endpoint-method">GET</div>
+      <div class="pad0 code small endpoint-url">api/v1/createEM5/?ownerID=<span class="strong">{ownerID}</span>&amp;firstID=<span class="strong">{firstID}</span>&amp;secondID=<span class="strong">{secondID}</span>&amp;thirdID=<span class="strong">{thirdID}</span>&amp;fourthID=<span class="strong">{fourthID}</span>&amp;fifthID=<span class="strong">{fifthID}</span>&amp;secretCode=<span class="strong">{secretCode}</span></div>
+    </div>
+<h4 id="example-request-13">Example request</h4>
+<pre class="hljs">curl -X GET <span class="hljs-string">"http://cs491-2.mustafaculban.net/api/v1/createEM5/?ownerID=1&amp;firstID=2&amp;secondID=3&amp;thirdID=4&amp;fourthID=5&amp;fifthID=6&amp;secretCode=xxx"</span></pre>
+<h4 id="example-for-successfuly-creation-of-em5-list">Example for successfuly creation of EM5 List.</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"FALSE"</span>,
+    <span class="hljs-attr">"success"</span>: <span class="hljs-string">"You have successfully created EM5 List."</span>
+}</pre>
+<h4 id="example-for-error-due-to-trying-to-recreate-em5-list-not-to-try-to-update">Example for error due to trying to recreate EM5 list not to try to update.</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"TRUE"</span>,
+    <span class="hljs-attr">"error_msg"</span>: <span class="hljs-string">"User already has EM5 List. Try to update that."</span>
+}</pre>
+<h4 id="example-for-dublicate-id-on-the-post-to-the-endpoint">Example for dublicate ID on the POST to the endpoint.</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"TRUE"</span>,
+    <span class="hljs-attr">"error_msg"</span>: <span class="hljs-string">"There is a dublicated id in the list please correct that first."</span>
+}</pre>
+<h4 id="example-for-adding-himself-or-herself-into-hisher-em5-list">Example for adding himself or herself into his/her EM5 list.</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"TRUE"</span>,
+    <span class="hljs-attr">"error_msg"</span>: <span class="hljs-string">"User cannot add himself or herself into EM5 List."</span>
+}</pre>
+<h4 id="example-for-error-in-the-server">Example for error in the Server.</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"TRUE"</span>,
+    <span class="hljs-attr">"error_msg"</span>: <span class="hljs-string">"There is an error on the server while recording. Please try again later."</span>
+}</pre>
+</div></div><div data-title="Approve/Reject EM5 Request" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="approvereject-em5-request">Approve/Reject EM5 Request</h3>
+<p>This endpoint is used to approve/reject the request created to add a user by the owner of the Emergency Five(EM5) list. Here the order in the list is important for user to approve/reject the request. </p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ownerID</code></td>
+<td>(
+<strong>required</strong>
+) ID of the owner of the EM5 list.</td>
+</tr>
+<tr>
+<td><code>uid</code></td>
+<td>(
+<strong>required</strong>
+) Id of the user who wants to accept/reject the request created by owner.</td>
+</tr>
+<tr>
+<td><code>order</code></td>
+<td>(
+<strong>required</strong>
+) order of the user where he/she was aded in to the owner's list. 
+<br>
+ This can be one of the following enumerated list: 
+<em><em>{'first','second', 'third', 'fourth', 'fifth'}</em></em></td>
+</tr>
+<tr>
+<td><code>choice</code></td>
+<td>(
+<strong>required</strong>
+) choice of the request user selects. This can be one of the following: 
+<em><em>{'-1', '0', '1'}</em></em>
+<br>
+ 
+<em>'-1' for rejecting the request, <br>'0' is set as initial value for request by system,<br> '1' for accepting the request.</em></td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5"><div class="endpoint dark fill-dark round ">
+      <div class="round-left pad0y pad1x fill-lighten0 code small endpoint-method">GET</div>
+      <div class="pad0 code small endpoint-url">api/v1/approveEM5Request/?ownerID=1&amp;uid=3&amp;order=third&amp;choice=-1&amp;secretCode=<span class="strong">{secretCode}</span></div>
+    </div>
+<h4 id="example-request-14">Example request</h4>
+<pre class="hljs">curl -X GET "http://cs491-2.mustafaculban.net/api/v1/approveEM5Request/?ownerID=1&amp;uid=2&amp;order=first&amp;choice=1&amp;secretCode=xxxx</pre>
+<h4 id="example-for-successfuly-update-on-the-em5-list-for-the-owner-of-it">Example for successfuly update on the EM5 list for the owner of it.</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"FALSE"</span>,
+    <span class="hljs-attr">"success"</span>: <span class="hljs-string">"You have successfully updated EM5 List preferences of yourself on the owner list."</span>
+}</pre>
+<h4 id="example-for-error-due-to-trying-to-update-a-user-in-the-wrong-order">Example for error due to trying to update a user in the wrong order.</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"TRUE"</span>,
+    <span class="hljs-attr">"error_msg"</span>: <span class="hljs-string">"This user is not in that order. Plase specify the order of the user."</span>
+}</pre>
+<h4 id="example-for-error-in-the-server-1">Example for error in the Server.</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"TRUE"</span>,
+    <span class="hljs-attr">"error_msg"</span>: <span class="hljs-string">"There is a problem while updating EM5 List. Please try again later."</span>
+}</pre>
+</div></div><div data-title="Get A EM5 List" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="get-a-em5-list">Get A EM5 List</h3>
+<p>This endpoint returns the EM5 list which belongs to the given ownerID.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ownerID</code></td>
+<td>(
+<strong>required</strong>
+) ID of the owner of the EM5 list.</td>
+</tr>
+<tr>
+<td><code>secretCode</code></td>
+<td>(
+<strong>required</strong>
+) the code taken from the administration.</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5"><div class="endpoint dark fill-dark round ">
+      <div class="round-left pad0y pad1x fill-lighten0 code small endpoint-method">GET</div>
+      <div class="pad0 code small endpoint-url">api/v1/getEM5List/<span class="strong">{ownerID}</span>/?secretCode=<span class="strong">{secretCode}</span></div>
+    </div>
+<h4 id="example-request-15">Example request</h4>
+<pre class="hljs">curl -X GET <span class="hljs-string">"http://cs491-2.mustafaculban.net/api/v1/getEM5List/xx/?secretCode=xxxx"</span></pre>
+<h4 id="example-for-error-if-user-doesnt-have-a-em5-list">Example for error if user doesnt have a EM5 List.</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"TRUE"</span>,
+    <span class="hljs-attr">"error_msg"</span>: <span class="hljs-string">"There is no EM5 List for the given user ID."</span>
+}</pre>
+<h4 id="example-of-valid-ownerid-for-a-em5-list">Example of valid ownerID for a EM5 List.</h4>
+<pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"FALSE"</span>,
+    <span class="hljs-attr">"em5list"</span>: {
+        <span class="hljs-attr">"owner_id"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"firstPersonID"</span>: <span class="hljs-number">2</span>,
+        <span class="hljs-attr">"isApprovedforFirstPerson"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"firstPersonChangeDate"</span>: <span class="hljs-string">"2018-02-23 03:39:56"</span>,
+        <span class="hljs-attr">"secondPersonID"</span>: <span class="hljs-number">3</span>,
+        <span class="hljs-attr">"isApprovedforSecondPerson"</span>: <span class="hljs-number">-1</span>,
+        <span class="hljs-attr">"secondPersonChangeDate"</span>: <span class="hljs-string">"2018-02-23 03:41:57"</span>,
+        <span class="hljs-attr">"thirdPersonID"</span>: <span class="hljs-number">4</span>,
+        <span class="hljs-attr">"isApprovedforThirdPerson"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">"thirdPersonChangeDate"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"fourthPersonID"</span>: <span class="hljs-number">5</span>,
+        <span class="hljs-attr">"isApprovedforFourthPerson"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">"fourthPersonChangeDate"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"fifthPersonID"</span>: <span class="hljs-number">6</span>,
+        <span class="hljs-attr">"isApprovedforFifthPerson"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">"fifthPersonChangeDate"</span>: <span class="hljs-string">""</span>
+    }
+}</pre>
+</div></div></div></div></div><div class="fixed-top space-left16"><div class="events fill-light bottom-shadow pad1 col6 pin-topright  "><div class="space-right1 small quiet inline">Show examples in:</div><div class="rounded-toggle inline short"><a class="strong active">cURL</a></div><div class="fr pad0"><a title="Display as 1 column" class="icon quiet caret-left pad0 fill-darken0 round" style="cursor: pointer;"></a></div></div></div><div class="fill-dark dark bottom-shadow fixed-top pad0 width16"><a href="http://139.179.103.133:9966/" class="active space-top1 space-left1 pin-topleft icon round dark pad0 fill-blue"></a><div class="strong small pad0
+          
+          space-left4 line-height15">BloodHub API Documentation</div></div></div></div><!--STOP-->
+    <script src="./index_files/bundle.js"></script>
+  
+
+<div class="adsbox">&nbsp;</div><div class="adsbox">&nbsp;</div></body><span class="gr__tooltip  gr__flipped" data-content="No definition found" style="top: -9999px; left: 50px; opacity: 0;"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle" style="margin-left: 26.5px;"></span></span></html>

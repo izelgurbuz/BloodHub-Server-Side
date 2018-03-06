@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://192.168.1.26:9966/#add-event -->
+<html class="gr__192_168_1_26">
+   <style type="text/css" id="night-mode-pro-style"></style>
+   <link type="text/css" rel="stylesheet" id="night-mode-pro-link">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=11">
+      <title>Docbox</title>
+      <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+      <link href="./index_files/base.css" rel="stylesheet">
+      <link href="./index_files/style.css" rel="stylesheet">
+      <link href="./index_files/railscasts.css" rel="stylesheet">
+   </head>
+   <body data-gr-c-s-loaded="true">
+      <script type="text/javascript" src="./index_files/livereload.js" async="" defer=""></script>
+      <!--START-->
+      <div id="app">
+         <div class="container unlimiter">
+            <div class="fixed-top fixed-right space-left16">
+               <div class="fill-light col6 pin-right"></div>
+            </div>
+            <div class="space-top5 scroll-styled overflow-auto pad1 width16 sidebar fixed-left fill-dark dark">
+               <div class="pad0x small">
+                  <div class="small pad0x quiet space-top1">Introduction</div>
+                  <a href="http://192.168.1.26:9966/#bloodhub" class="line-height15 pad0x pad00y quiet block ">BloodHub</a>
+                  <div class="small pad0x quiet space-top1">Example</div>
+                  <a href="http://192.168.1.26:9966/#api" class="line-height15 pad0x pad00y quiet block ">API</a>
+                  <div class="space-left1"><a href="http://192.168.1.26:9966/#list-users" class="line-height15 pad0x pad00y quiet block ">List Users</a></div>
+                  <div class="space-left1"><a href="http://192.168.1.26:9966/#create-a-user" class="line-height15 pad0x pad00y quiet block ">Create a User</a></div>
+                  <div class="space-left1"><a href="http://192.168.1.26:9966/#login-a-user" class="line-height15 pad0x pad00y quiet block ">Login a user</a></div>
+                  <div class="space-left1"><a href="http://192.168.1.26:9966/#retrieve-a-user" class="line-height15 pad0x pad00y quiet block ">Retrieve a user</a></div>
+                  <div class="space-left1"><a href="http://192.168.1.26:9966/#send-blood-request" class="line-height15 pad0x pad00y quiet block ">Send Blood Request</a></div>
+                  <div class="space-left1"><a href="http://192.168.1.26:9966/#add-event" class="line-height15 pad0x pad00y quiet block fill-lighten0 round">Add Event</a></div>
+                  <div class="space-left1"><a href="http://192.168.1.26:9966/#get-event" class="line-height15 pad0x pad00y quiet block ">Get Event</a></div>
+               </div>
+            </div>
+            <div class="space-left16">
+               <div class="">
+                  <div class="clearfix">
+                     <div data-title="BloodHub" class="keyline-top section contain clearfix ">
+                        <div class="space-bottom8 col6 pad2x prose clip">
+                           <h2 id="bloodhub">BloodHub</h2>
+                           <p>This is our high-quality  API. This documentation is only for administrative purpose only. API won't be running without proper secret code taken by the administartion unit. </p>
+                           <p>Android and the iOS apps will be using this API channel to communicate with servers of the BloodHub.</p>
+                        </div>
+                     </div>
+                     <div data-title="API" class="keyline-top section contain clearfix ">
+                        <div class="space-bottom8 col6 pad2x prose clip">
+                           <h2 id="api">API</h2>
+                           <p>Below are the fallback services that are used by the BloodHub Android and iOS apps.</p>
+                        </div>
+                     </div>
+                     <div data-title="List Users" class="keyline-top section contain clearfix ">
+                        <div class="space-bottom8 col6 pad2x prose clip">
+                           <h3 id="list-users">List Users</h3>
+                           <p>Lists all users in the system. You need to have a proper <strong>secretCode</strong> to use the API Service.</p>
+                           <table>
+                              <thead>
+                                 <tr>
+                                    <th>Property</th>
+                                    <th>Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td><code>secretCode</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) the code taken from the administration
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td><code>available</code></td>
+                                    <td>(
+                                       <strong>optional</strong>
+                                       )  takes 
+                                       <strong><em>1</em></strong>
+                                       or 
+                                       <strong><em>0</em></strong>
+                                       values. If not specified default 
+                                       <em>1</em>
+                                       .
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <div class="space-bottom4 col6 pad2 prose clip fill-light space-top5">
+                           <div class="endpoint dark fill-dark round ">
+                              <div class="round-left pad0y pad1x fill-lighten0 code small endpoint-method">GET</div>
+                              <div class="pad0 code small endpoint-url">/api/v1/getUsers?available=<span class="strong">{available}</span>&amp;secretCode=<span class="strong">{secret_key}</span></div>
+                           </div>
+                           <h4 id="example-request">Example request</h4>
+                           <pre class="hljs">$ curl http://cs491-2.mustafaculban.net/api/v1/getUsers?available={available}&amp;secretCode={secret_key}</pre>
+                           <h4 id="example-response">Example response</h4>
+                           <pre class="hljs">[  
+   {  
+      <span class="hljs-attr">"id"</span>:<span class="hljs-string">"1"</span>,
+      <span class="hljs-attr">"username"</span>:<span class="hljs-string">"mustafaculban"</span>,
+      <span class="hljs-attr">"firstname"</span>:<span class="hljs-string">"Mustafa"</span>,
+      <span class="hljs-attr">"surname"</span>:<span class="hljs-string">"Culban"</span>,
+      <span class="hljs-attr">"password"</span>:<span class="hljs-string">"hpwX8Xee9eXpZNDX9V6S/JO/2b43N2UyMGM4ZWFh"</span>,
+      <span class="hljs-attr">"salt"</span>:<span class="hljs-string">"77e20c8eaa"</span>,
+      <span class="hljs-attr">"email"</span>:<span class="hljs-string">"mustafaculban1@gmail.com"</span>,
+      <span class="hljs-attr">"identitiyNum"</span>:<span class="hljs-string">"xJScYofeE8AC2udPsDv8yRpPiCo5ZDNjZjg5YWUz"</span>,
+      <span class="hljs-attr">"identitySalt"</span>:<span class="hljs-string">"77e20c8eaa"</span>,
+      <span class="hljs-attr">"bloodType"</span>:<span class="hljs-string">"AB+"</span>,
+      <span class="hljs-attr">"birthdate"</span>:<span class="hljs-string">"16041995"</span>,
+      <span class="hljs-attr">"address"</span>:<span class="hljs-string">"denemeAdress"</span>,
+      <span class="hljs-attr">"telephone"</span>:<span class="hljs-string">"5396768149"</span>,
+      <span class="hljs-attr">"available"</span>:<span class="hljs-string">"1"</span>
+   },
+   {  
+      <span class="hljs-attr">"id"</span>:<span class="hljs-string">"2"</span>,
+      <span class="hljs-attr">"username"</span>:<span class="hljs-string">"karamusluk"</span>,
+      <span class="hljs-attr">"firstname"</span>:<span class="hljs-string">"Mustafa"</span>,
+      <span class="hljs-attr">"surname"</span>:<span class="hljs-string">"Culban"</span>,
+      <span class="hljs-attr">"password"</span>:<span class="hljs-string">"R8jB6Ra0YZPJI9MiV7+FBkaNLl5hY2Y2YzNjMWVm"</span>,
+      <span class="hljs-attr">"salt"</span>:<span class="hljs-string">"acf6c3c1ef"</span>,
+      <span class="hljs-attr">"email"</span>:<span class="hljs-string">"karamusluk@gmail.com"</span>,
+      <span class="hljs-attr">"identitiyNum"</span>:<span class="hljs-string">"bAEk/vbYJcaBpBzmE4zTsh1crXs0YWQ4NzEwMzJl"</span>,
+      <span class="hljs-attr">"identitySalt"</span>:<span class="hljs-string">"acf6c3c1ef"</span>,
+      <span class="hljs-attr">"bloodType"</span>:<span class="hljs-string">"AB-"</span>,
+      <span class="hljs-attr">"birthdate"</span>:<span class="hljs-string">"16041995"</span>,
+      <span class="hljs-attr">"address"</span>:<span class="hljs-string">"denemeAdress"</span>,
+      <span class="hljs-attr">"telephone"</span>:<span class="hljs-string">"05396768149"</span>,
+      <span class="hljs-attr">"available"</span>:<span class="hljs-string">"1"</span>
+   },
+   {  
+      <span class="hljs-attr">"id"</span>:<span class="hljs-string">"5"</span>,
+      <span class="hljs-attr">"username"</span>:<span class="hljs-string">"izelgurbuz"</span>,
+      <span class="hljs-attr">"firstname"</span>:<span class="hljs-string">"İzel"</span>,
+      <span class="hljs-attr">"surname"</span>:<span class="hljs-string">"Gürbüz"</span>,
+      <span class="hljs-attr">"password"</span>:<span class="hljs-string">"hFSjvZf3XjF/Mh1woJMz02Fm64swMmE1MjY3YjRj"</span>,
+      <span class="hljs-attr">"salt"</span>:<span class="hljs-string">"02a5267b4c"</span>,
+      <span class="hljs-attr">"email"</span>:<span class="hljs-string">"izelgurbuz@gmail.com"</span>,
+      <span class="hljs-attr">"identitiyNum"</span>:<span class="hljs-string">"mpNCD8HMBpY+k+DRGNv593TY3KcyMzE5ZGYzYWFl"</span>,
+      <span class="hljs-attr">"identitySalt"</span>:<span class="hljs-string">"02a5267b4c"</span>,
+      <span class="hljs-attr">"bloodType"</span>:<span class="hljs-string">"AB+"</span>,
+      <span class="hljs-attr">"birthdate"</span>:<span class="hljs-string">"11081995"</span>,
+      <span class="hljs-attr">"address"</span>:<span class="hljs-string">"Ankara Bilkent "</span>,
+      <span class="hljs-attr">"telephone"</span>:<span class="hljs-string">"5317803034"</span>,
+      <span class="hljs-attr">"available"</span>:<span class="hljs-string">"1"</span>
+   }
+]</pre>
+                        </div>
+                     </div>
+                     <div data-title="Create a User" class="keyline-top section contain clearfix ">
+                        <div class="space-bottom8 col6 pad2x prose clip">
+                           <h3 id="create-a-user">Create a User</h3>
+                           <p>Creates a newuser.</p>
+                           <table>
+                              <thead>
+                                 <tr>
+                                    <th>Property</th>
+                                    <th>Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td><code>username</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) username of the user.
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td><code>firstname</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) name of the user.
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td><code>surname</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) surname of the user.
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td><code>password</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) password of the user. Need to be given as raw input, non-hashed.
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td><code>email</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) email of the user.
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td><code>identityNum</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) identitiy number of the user, both foreign and turkish citizen number are valid.
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td><code>bloodType</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) blood type of the user, should be given as 
+                                       <strong>%2B</strong>
+                                       for + type of blood. check 
+                                       <a href="http://krypted.com/utilities/html-encoding-reference/">encoding reference</a>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td><code>birthdate</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) birthdate of the user, should be given as this pattern: 
+                                       <strong>ddmmYYYY</strong>
+                                       .
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td><code>address</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) address of the user
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td><code>telephone</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) telephone of the user
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td><code>secretCode</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) the code taken from the administration
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <div class="space-bottom4 col6 pad2 prose clip fill-light space-top5">
+                           <div class="endpoint dark fill-dark round ">
+                              <div class="round-left pad0y pad1x fill-lighten0 code small endpoint-method">GET</div>
+                              <div class="pad0 code small endpoint-url">/api/v1/register/<span class="strong">{request_body}</span></div>
+                           </div>
+                           <h4 id="request-body">Request body</h4>
+                           <pre class="hljs">{
+  <span class="hljs-attr">"username"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"firstname"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"surname"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"password"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"email"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"identityNum"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"bloodType"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"birthdate"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"address"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"secretCode"</span>: <span class="hljs-string">"xxx"</span>
+}</pre>
+                           <h4 id="example-request-1">Example request</h4>
+                           <pre class="hljs">curl -X GET http://cs491-2.mustafaculban.net/api/v1/register/?username={username}&amp;firstname={firtsname}&amp;surname={surname}&amp;password={password}&amp;email={email}&amp;identityNum={identityNum}&amp;bloodType={bloodType}&amp;birthdate={birthdate}&amp;address={address}&amp;telephone={telephone}&amp;secretCode={secret_key}</pre>
+                           <h4 id="example-with-fake-id-response">Example with fake id response</h4>
+                           <pre class="hljs">{ 
+   <span class="hljs-attr">"error"</span>:<span class="hljs-string">"true"</span>,
+   <span class="hljs-attr">"error_msg"</span>:<span class="hljs-string">"This identitiy Number is fake"</span>
+}</pre>
+                           <h4 id="example-already-registered-user-response">Example already registered user response</h4>
+                           <pre class="hljs">{ 
+   <span class="hljs-attr">"error"</span>:<span class="hljs-string">"true"</span>,
+   <span class="hljs-attr">"error_msg"</span>:<span class="hljs-string">"User already existed with email: {email} and username: {username}"</span>
+}</pre>
+                           <h4 id="example-successful-response">Example successful response</h4>
+                           <pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"false"</span>,
+    <span class="hljs-attr">"user"</span>: {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">7</span>,
+        <span class="hljs-attr">"username"</span>: <span class="hljs-string">"izelgurbuz"</span>,
+        <span class="hljs-attr">"firstname"</span>: <span class="hljs-string">"İzel"</span>,
+        <span class="hljs-attr">"surname"</span>: <span class="hljs-string">"Gürbüz"</span>,
+        <span class="hljs-attr">"email"</span>: <span class="hljs-string">"izelgurbuz1@gmail.com"</span>,
+        <span class="hljs-attr">"bloodType"</span>: <span class="hljs-string">" 0+"</span>,
+        <span class="hljs-attr">"birthdate"</span>: <span class="hljs-string">"11081995"</span>,
+        <span class="hljs-attr">"address"</span>: <span class="hljs-string">"denemeAdress"</span>,
+        <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"053178xx034"</span>,
+        <span class="hljs-attr">"available"</span>: <span class="hljs-number">0</span>
+    }
+}</pre>
+                        </div>
+                     </div>
+                     <div data-title="Login a user" class="keyline-top section contain clearfix ">
+                        <div class="space-bottom8 col6 pad2x prose clip">
+                           <h3 id="login-a-user">Login a user</h3>
+                           <p>make a user login with a given parameters.</p>
+                           <table>
+                              <thead>
+                                 <tr>
+                                    <th>Property</th>
+                                    <th>Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td><code>email</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) email of the registered user.
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td><code>password</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) password of the registered user.
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td><code>secretCode</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) the code taken from the administration.
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <div class="space-bottom4 col6 pad2 prose clip fill-light space-top5">
+                           <div class="endpoint dark fill-dark round ">
+                              <div class="round-left pad0y pad1x fill-lighten0 code small endpoint-method">GET</div>
+                              <div class="pad0 code small endpoint-url">/api/v1/login/&amp;email=<span class="strong">{email}</span>&amp;password=<span class="strong">{password}</span>&amp;secretCode=<span class="strong">{secretCode}</span></div>
+                           </div>
+                           <h4 id="example-request-2">Example request</h4>
+                           <pre class="hljs">curl -X GET <span class="hljs-string">"http://cs491-2.mustafaculban.net/api/v1/login/?email=xxx&amp;password=xxx&amp;secretCode=xxx"</span></pre>
+                           <h4 id="example-of-wrong-credentials">Example of wrong credentials</h4>
+                           <pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"true"</span>,
+    <span class="hljs-attr">"error_msg"</span>: <span class="hljs-string">"Login credentials are wrong. Please try again!"</span>
+}</pre>
+                           <h4 id="example-of-successful-login">Example of successful login</h4>
+                           <pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"false"</span>,
+    <span class="hljs-attr">"user"</span>: {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"username"</span>: <span class="hljs-string">"xxxxx"</span>,
+        <span class="hljs-attr">"firstname"</span>: <span class="hljs-string">"xxxx"</span>,
+        <span class="hljs-attr">"surname"</span>: <span class="hljs-string">"xxx"</span>,
+        <span class="hljs-attr">"email"</span>: <span class="hljs-string">"xxxxx@gmail.com"</span>,
+        <span class="hljs-attr">"bloodType"</span>: <span class="hljs-string">"AB+"</span>,
+        <span class="hljs-attr">"birthdate"</span>: <span class="hljs-string">"xxxx"</span>,
+        <span class="hljs-attr">"address"</span>: <span class="hljs-string">"xxxx"</span>,
+        <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"xxxx"</span>,
+        <span class="hljs-attr">"available"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"last_login_ip"</span>: <span class="hljs-string">"176.33.240.215"</span>,
+        <span class="hljs-attr">"last_login_date"</span>: <span class="hljs-string">"Wednesday, January 24th, 2018"</span>,
+        <span class="hljs-attr">"last_login_time"</span>: <span class="hljs-string">"11:15 AM"</span>
+    }
+}</pre>
+                        </div>
+                     </div>
+                     <div data-title="Retrieve a user" class="keyline-top section contain clearfix ">
+                        <div class="space-bottom8 col6 pad2x prose clip">
+                           <h3 id="retrieve-a-user">Retrieve a user</h3>
+                           <p>Returns a single user with a given id.</p>
+                           <table>
+                              <thead>
+                                 <tr>
+                                    <th>Property</th>
+                                    <th>Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td><code>user_id</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) id of the desired user.
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td><code>secretCode</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) the code taken from the administration.
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                           <p>Retrieve information about a single user.</p>
+                        </div>
+                        <div class="space-bottom4 col6 pad2 prose clip fill-light space-top5">
+                           <div class="endpoint dark fill-dark round ">
+                              <div class="round-left pad0y pad1x fill-lighten0 code small endpoint-method">GET</div>
+                              <div class="pad0 code small endpoint-url">/api/v1/getUser/<span class="strong">{user_id}</span>/?secretCode=<span class="strong">{secretCode}</span></div>
+                           </div>
+                           <h4 id="example-request-3">Example request</h4>
+                           <pre class="hljs">curl -X GET <span class="hljs-string">"http://cs491-2.mustafaculban.net/api/v1/getUser/{user_id}/?secretCode={secretCode}"</span></pre>
+                           <h4 id="example-response-1">Example response</h4>
+                           <pre class="hljs">{
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>,
+    <span class="hljs-attr">"username"</span>: <span class="hljs-string">"xxxxx"</span>,
+    <span class="hljs-attr">"firstname"</span>: <span class="hljs-string">"xxxx"</span>,
+    <span class="hljs-attr">"surname"</span>: <span class="hljs-string">"xxxx"</span>,
+    <span class="hljs-attr">"email"</span>: <span class="hljs-string">"xxxxx@gmail.com"</span>,
+    <span class="hljs-attr">"bloodType"</span>: <span class="hljs-string">"xxxx"</span>,
+    <span class="hljs-attr">"birthdate"</span>: <span class="hljs-string">"xxxxxxxx"</span>,
+    <span class="hljs-attr">"address"</span>: <span class="hljs-string">"xxxx"</span>,
+    <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"xxxxx"</span>,
+    <span class="hljs-attr">"available"</span>: <span class="hljs-string">"1"</span>,
+    <span class="hljs-attr">"last_login_ip"</span>: <span class="hljs-string">"xxx.xx.xxx.xx"</span>,
+    <span class="hljs-attr">"last_login_date"</span>: <span class="hljs-string">"Wednesday, January 24th, 2018"</span>,
+    <span class="hljs-attr">"last_login_time"</span>: <span class="hljs-string">"11:16 AM"</span>
+}</pre>
+                        </div>
+                     </div>
+                     <div data-title="Send Blood Request" class="keyline-top section contain clearfix ">
+                        <div class="space-bottom8 col6 pad2x prose clip">
+                           <h3 id="send-blood-request">Send Blood Request</h3>
+                           <p>Sending the blood request via API. Whole Request body should be sent to request.</p>
+                           <table>
+                              <thead>
+                                 <tr>
+                                    <th>Property</th>
+                                    <th>Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td><code>name_surname</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) the full name of the patient.
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td><code>notificationType</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) one of these 3 type of notification. {
+                                       <em>mail</em>
+                                       , 
+                                       <em>sms</em>
+                                       , 
+                                       <em>push</em>
+                                       }
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td><code>bloodType</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) blood type of the user, should be given as 
+                                       <strong>%2B</strong>
+                                       for + type of blood. check 
+                                       <a href="http://krypted.com/utilities/html-encoding-reference/">encoding reference</a>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td><code>location</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) the destination location of the hospital
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td><code>hospitalName</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) the full hospital name
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td><code>secretCode</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) the code taken from the administration.
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <div class="space-bottom4 col6 pad2 prose clip fill-light space-top5">
+                           <div class="endpoint dark fill-dark round ">
+                              <div class="round-left pad0y pad1x fill-lighten0 code small endpoint-method">GET</div>
+                              <div class="pad0 code small endpoint-url">/api/v1/sendBloodRequest/<span class="strong">{request_body}</span></div>
+                           </div>
+                           <h4 id="request-body-1">Request body</h4>
+                           <pre class="hljs">{
+  <span class="hljs-attr">"name_surname"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"notificationType"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"bloodType"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"location"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"hospitalName"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"secretCode"</span>: <span class="hljs-string">"xxx"</span>
+}</pre>
+                           <h4 id="example-request-4">Example request</h4>
+                           <pre class="hljs">curl -X GET <span class="hljs-string">"http://cs491-2.mustafaculban.net/api/v1/sendBloodRequest/?name_surname={name_surname}&amp;notificationType={notification_type}&amp;bloodType={bloodType}&amp;location={location}&amp;hospitalName={hospitalName}&amp;secretCode={secretCode}"</span></pre>
+                           <h4 id="example-response-2">Example response</h4>
+                           <pre class="hljs">{
+  <span class="hljs-attr">"owner"</span>: <span class="hljs-string">"{username}"</span>,
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"{id}"</span>,
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"foo"</span>,
+  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"bar"</span>,
+  <span class="hljs-attr">"created"</span>: <span class="hljs-string">"{timestamp}"</span>,
+  <span class="hljs-attr">"modified"</span>: <span class="hljs-string">"{timestamp}"</span>
+}</pre>
+                        </div>
+                     </div>
+                     <div data-title="Add Event" class="keyline-top section contain clearfix ">
+                        <div class="space-bottom8 col6 pad2x prose clip">
+                           <h3 id="add-event">Add Event</h3>
+                           <p>Adding event with API. These event will be shown on the android and iOS apps.</p>
+                           <table>
+                              <thead>
+                                 <tr>
+                                    <th>Property</th>
+                                    <th>Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td><code>name</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) The full name of the event.
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td><code>city</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) City where this event takes place.
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td><code>content</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) Full content of the vent . Content can include 
+                                       <strong>HTML</strong>
+                                       codes.
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td><code>latitude</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) Latitude of the event where it happens. Type should be 
+                                       <em>Double</em>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td><code>longitude</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       )  Longitude of the event where it happens. Type should be 
+                                       <em>Double</em>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td><code>startDate</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) Time when this event starts
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td><code>endDate</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) Time when this event ends.
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td><code>secretCode</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) the code taken from the administration.
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <div class="space-bottom4 col6 pad2 prose clip fill-light space-top5">
+                           <div class="endpoint dark fill-dark round ">
+                              <div class="round-left pad0y pad1x fill-lighten0 code small endpoint-method">GET</div>
+                              <div class="pad0 code small endpoint-url">/api/v1/addEvent/<span class="strong">{request_body}</span></div>
+                           </div>
+                           <h4 id="request-body-2">Request body</h4>
+                           <pre class="hljs">{
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"city"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"content"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"startDate"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"endDate"</span>: <span class="hljs-string">"xxx"</span>,
+  <span class="hljs-attr">"latitude"</span>: <span class="hljs-number">11</span>,
+  <span class="hljs-attr">"longitude"</span>: <span class="hljs-number">11</span>
+}</pre>
+                           <h4 id="example-request-5">Example request</h4>
+                           <pre class="hljs">curl -X GET <span class="hljs-string">"http://cs491-2.mustafaculban.net/api/v1/addEvent/?name={name}&amp;city={city}&amp;latitude={latitude}&amp;longitude={longitude}&amp;content={content}&amp;startDate={startDate}&amp;endDate={endDate}&amp;secretCode={secretCode}"</span></pre>
+                           <h4 id="example-of-erroneous-response">Example of erroneous response</h4>
+                           <pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"TRUE"</span>,
+    <span class="hljs-attr">"error_msg"</span>: <span class="hljs-string">"Error on saving event into database."</span>
+}</pre>
+                           <h4 id="example-of-succesful-response">Example of succesful response</h4>
+                           <pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"FALSE"</span>,
+    <span class="hljs-attr">"success"</span>: <span class="hljs-string">"Event was added succesfully."</span>,
+    <span class="hljs-attr">"event"</span>: {
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Kan Deneme"</span>,
+        <span class="hljs-attr">"city"</span>: <span class="hljs-string">"Ankara"</span>,
+        <span class="hljs-attr">"content"</span>: <span class="hljs-string">"Bilkent de kan cadirimiza davetlisiniz."</span>,
+        <span class="hljs-attr">"latitude"</span>: <span class="hljs-string">"39.868043"</span>,
+        <span class="hljs-attr">"longitude"</span>: <span class="hljs-string">"32.749089"</span>,
+        <span class="hljs-attr">"startDate"</span>: <span class="hljs-string">"16.02.2018"</span>,
+        <span class="hljs-attr">"endDate"</span>: <span class="hljs-string">"15.04.2018"</span>
+    }
+}</pre>
+                        </div>
+                     </div>
+                     <div data-title="Get Event" class="keyline-top section contain clearfix ">
+                        <div class="space-bottom8 col6 pad2x prose clip">
+                           <h3 id="get-event">Get Event</h3>
+                           <p>get event with a given id. If there is no event error message will be returned.</p>
+                           <table>
+                              <thead>
+                                 <tr>
+                                    <th>Property</th>
+                                    <th>Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td><code>event_id</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) preadded event id is required to fetch.
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td><code>secretCode</code></td>
+                                    <td>(
+                                       <strong>required</strong>
+                                       ) the code taken from the administration.
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <div class="space-bottom4 col6 pad2 prose clip fill-light space-top5">
+                           <div class="endpoint dark fill-dark round ">
+                              <div class="round-left pad0y pad1x fill-lighten0 code small endpoint-method">GET</div>
+                              <div class="pad0 code small endpoint-url">api/v1/getEvent/<span class="strong">{event_id}</span>/&amp;secretCode=<span class="strong">{secretCode}</span></div>
+                           </div>
+                           <h4 id="example-request-6">Example request</h4>
+                           <pre class="hljs">curl -X GET <span class="hljs-string">"http://cs491-2.mustafaculban.net/api/v1/getEvent/xx/?secretCode=xxxxx"</span></pre>
+                           <h4 id="example-of-non-existing-event-id">Example of non existing event id.</h4>
+                           <pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"TRUE"</span>,
+    <span class="hljs-attr">"error_msg"</span>: <span class="hljs-string">"There is no event with the given ID."</span>
+}</pre>
+                           <h4 id="example-of-true-event-id">Example of true event id.</h4>
+                           <pre class="hljs">{
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"FALSE"</span>,
+    <span class="hljs-attr">"event"</span>: {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Bilkent Kan Cadiri"</span>,
+        <span class="hljs-attr">"city"</span>: <span class="hljs-string">"Ankara"</span>,
+        <span class="hljs-attr">"content"</span>: <span class="hljs-string">"Bilkent de kan cadirimiza davetlisiniz."</span>,
+        <span class="hljs-attr">"startDate"</span>: <span class="hljs-string">"15.02.2018"</span>,
+        <span class="hljs-attr">"endDate"</span>: <span class="hljs-string">"15.02.2018"</span>,
+        <span class="hljs-attr">"latitude"</span>: <span class="hljs-number">39.868043</span>,
+        <span class="hljs-attr">"longitude"</span>: <span class="hljs-number">32.749089</span>
+    }
+}</pre>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="fixed-top space-left16">
+               <div class="events fill-light bottom-shadow pad1 col6 pin-topright  ">
+                  <div class="space-right1 small quiet inline">Show examples in:</div>
+                  <div class="rounded-toggle inline short"><a class="strong active">cURL</a></div>
+                  <div class="fr pad0"><a title="Display as 1 column" class="icon quiet caret-left pad0 fill-darken0 round" style="cursor: pointer;"></a></div>
+               </div>
+            </div>
+            <div class="fill-dark dark bottom-shadow fixed-top pad0 width16">
+               <a href="http://192.168.1.26:9966/" class="active space-top1 space-left1 pin-topleft icon round dark pad0 fill-blue"></a>
+               <div class="strong small pad0
+                  space-left4 line-height15">BloodHub API Documentation</div>
+            </div>
+         </div>
+      </div>
+      <!--STOP-->
+      <script src="./index_files/bundle.js"></script>
+   </body>
+</html>

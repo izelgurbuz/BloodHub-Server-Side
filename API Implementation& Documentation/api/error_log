@@ -1,0 +1,457 @@
+05-Nov-2017 02:03:59 Europe/Istanbul] PHP Fatal error:  Call to undefined method mysqli_stmt::get_result() in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 49
+[05-Nov-2017 02:08:48 Europe/Istanbul] PHP Warning:  mysqli_stmt::bind_result(): Number of bind variables doesn't match number of fields in prepared statement in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 49
+[05-Nov-2017 02:18:29 Europe/Istanbul] PHP Fatal error:  Call to undefined function fetchAssocStatement() in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 50
+[05-Nov-2017 02:18:42 Europe/Istanbul] PHP Fatal error:  Call to undefined function fetchAssocStatement() in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 50
+[05-Nov-2017 02:19:04 Europe/Istanbul] PHP Fatal error:  Call to undefined function fetchAssocStatement() in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 50
+[05-Nov-2017 02:20:18 Europe/Istanbul] PHP Fatal error:  Call to undefined function fetchAssocStatement() in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 50
+[05-Nov-2017 02:20:57 Europe/Istanbul] PHP Notice:  Array to string conversion in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 53
+[05-Nov-2017 02:20:57 Europe/Istanbul] PHP Notice:  Undefined index: identityNum in /home/mustafa2/cs491-2.mustafaculban.net/api/register.php on line 40
+[05-Nov-2017 02:24:29 Europe/Istanbul] PHP Notice:  Undefined index: encrypted_password in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 77
+[05-Nov-2017 02:26:44 Europe/Istanbul] PHP Notice:  Undefined index: identityNum in /home/mustafa2/cs491-2.mustafaculban.net/api/login.php on line 25
+[05-Nov-2017 02:31:04 Europe/Istanbul] PHP Notice:  Undefined index: encryptedidentityNum in /home/mustafa2/cs491-2.mustafaculban.net/api/login.php on line 25
+[05-Nov-2017 02:36:29 Europe/Istanbul] PHP Notice:  Use of undefined constant identityNum - assumed 'identityNum' in /home/mustafa2/cs491-2.mustafaculban.net/api/register.php on line 24
+[05-Nov-2017 02:37:23 Europe/Istanbul] PHP Notice:  Use of undefined constant identityNum - assumed 'identityNum' in /home/mustafa2/cs491-2.mustafaculban.net/api/register.php on line 24
+[05-Nov-2017 02:37:40 Europe/Istanbul] PHP Notice:  Use of undefined constant identityNum - assumed 'identityNum' in /home/mustafa2/cs491-2.mustafaculban.net/api/register.php on line 24
+[05-Nov-2017 02:42:46 Europe/Istanbul] PHP Fatal error:  Call to undefined function encodeURIComponent() in /home/mustafa2/cs491-2.mustafaculban.net/api/register.php on line 25
+[05-Nov-2017 10:22:36 Europe/Istanbul] PHP Fatal error:  Call to undefined function encodeURIComponent() in /home/mustafa2/cs491-2.mustafaculban.net/api/register.php on line 25
+[06-Nov-2017 17:06:45 Europe/Istanbul] PHP Notice:  Undefined index: request in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 5
+[07-Nov-2017 00:18:00 Europe/Istanbul] PHP Notice:  Undefined index: request in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 5
+[09-Nov-2017 15:30:30 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '{' in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 119
+[09-Nov-2017 15:34:03 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '{' in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 119
+[09-Nov-2017 15:34:40 Europe/Istanbul] PHP Fatal error:  Class 'PHPMailer' not found in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 131
+[09-Nov-2017 15:36:00 Europe/Istanbul] PHP Fatal error:  Class 'PHPMailer' not found in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 132
+[09-Nov-2017 15:38:14 Europe/Istanbul] PHP Fatal error:  Class 'PHPMailer' not found in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 132
+[09-Nov-2017 15:58:17 Europe/Istanbul] PHP Deprecated:  Function set_magic_quotes_runtime() is deprecated in /home/mustafa2/cs491-2.mustafaculban.net/configApi/class.phpmailer.php on line 1471
+[09-Nov-2017 15:58:17 Europe/Istanbul] PHP Deprecated:  Function set_magic_quotes_runtime() is deprecated in /home/mustafa2/cs491-2.mustafaculban.net/configApi/class.phpmailer.php on line 1475
+[09-Nov-2017 16:07:04 Europe/Istanbul] PHP Deprecated:  Function set_magic_quotes_runtime() is deprecated in /home/mustafa2/cs491-2.mustafaculban.net/configApi/class.phpmailer.php on line 1471
+[09-Nov-2017 16:07:04 Europe/Istanbul] PHP Deprecated:  Function set_magic_quotes_runtime() is deprecated in /home/mustafa2/cs491-2.mustafaculban.net/configApi/class.phpmailer.php on line 1475
+[09-Nov-2017 16:08:56 Europe/Istanbul] PHP Deprecated:  Function set_magic_quotes_runtime() is deprecated in /home/mustafa2/cs491-2.mustafaculban.net/configApi/class.phpmailer.php on line 1471
+[09-Nov-2017 16:08:56 Europe/Istanbul] PHP Deprecated:  Function set_magic_quotes_runtime() is deprecated in /home/mustafa2/cs491-2.mustafaculban.net/configApi/class.phpmailer.php on line 1475
+[09-Nov-2017 16:09:21 Europe/Istanbul] PHP Deprecated:  Function set_magic_quotes_runtime() is deprecated in /home/mustafa2/cs491-2.mustafaculban.net/configApi/class.phpmailer.php on line 1471
+[09-Nov-2017 16:09:21 Europe/Istanbul] PHP Deprecated:  Function set_magic_quotes_runtime() is deprecated in /home/mustafa2/cs491-2.mustafaculban.net/configApi/class.phpmailer.php on line 1475
+[09-Nov-2017 17:10:54 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ':' in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 187
+[09-Nov-2017 18:08:11 Europe/Istanbul] PHP Deprecated:  Function set_magic_quotes_runtime() is deprecated in /home/mustafa2/cs491-2.mustafaculban.net/configApi/class.phpmailer.php on line 1471
+[09-Nov-2017 19:34:09 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 2
+[09-Nov-2017 19:34:34 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 2
+[10-Nov-2017 00:15:54 Europe/Istanbul] PHP Notice:  Undefined index: type in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 185
+[10-Nov-2017 00:16:01 Europe/Istanbul] PHP Notice:  Undefined index: type in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 185
+[10-Nov-2017 00:16:10 Europe/Istanbul] PHP Notice:  Undefined index: type in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 185
+[10-Nov-2017 00:26:39 Europe/Istanbul] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 3
+[10-Nov-2017 00:28:39 Europe/Istanbul] PHP Fatal error:  Call to undefined method SimpleXMLElement::toString() in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 190
+[10-Nov-2017 00:37:03 Europe/Istanbul] PHP Fatal error:  Uncaught exception 'Exception' with message 'SimpleXMLElement::__construct() expects at least 1 parameter, 0 given' in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php:188
+Stack trace:
+#0 /home/mustafa2/cs491-2.mustafaculban.net/api/api.php(188): SimpleXMLElement->__construct()
+#1 {main}
+  thrown in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 188
+[10-Nov-2017 00:41:19 Europe/Istanbul] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 195
+[10-Nov-2017 00:43:06 Europe/Istanbul] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 194
+[10-Nov-2017 00:44:45 Europe/Istanbul] PHP Warning:  SimpleXMLElement::__construct(): Entity: line 1: parser error : Start tag expected, '&lt;' not found in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 188
+[10-Nov-2017 00:44:45 Europe/Istanbul] PHP Warning:  SimpleXMLElement::__construct(): &lt;?xml version=&quot;1.0&quot;?&gt; in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 188
+[10-Nov-2017 00:44:45 Europe/Istanbul] PHP Warning:  SimpleXMLElement::__construct():                      ^ in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 188
+[10-Nov-2017 00:44:45 Europe/Istanbul] PHP Fatal error:  Uncaught exception 'Exception' with message 'String could not be parsed as XML' in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php:188
+Stack trace:
+#0 /home/mustafa2/cs491-2.mustafaculban.net/api/api.php(188): SimpleXMLElement->__construct('<?xml version="...')
+#1 {main}
+  thrown in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 188
+[10-Nov-2017 00:44:46 Europe/Istanbul] PHP Warning:  SimpleXMLElement::__construct(): Entity: line 1: parser error : Start tag expected, '&lt;' not found in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 188
+[10-Nov-2017 00:44:46 Europe/Istanbul] PHP Warning:  SimpleXMLElement::__construct(): &lt;?xml version=&quot;1.0&quot;?&gt; in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 188
+[10-Nov-2017 00:44:46 Europe/Istanbul] PHP Warning:  SimpleXMLElement::__construct():                      ^ in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 188
+[10-Nov-2017 00:44:46 Europe/Istanbul] PHP Fatal error:  Uncaught exception 'Exception' with message 'String could not be parsed as XML' in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php:188
+Stack trace:
+#0 /home/mustafa2/cs491-2.mustafaculban.net/api/api.php(188): SimpleXMLElement->__construct('<?xml version="...')
+#1 {main}
+  thrown in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 188
+[10-Nov-2017 00:44:50 Europe/Istanbul] PHP Warning:  SimpleXMLElement::__construct(): Entity: line 1: parser error : Start tag expected, '&lt;' not found in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 188
+[10-Nov-2017 00:44:50 Europe/Istanbul] PHP Warning:  SimpleXMLElement::__construct(): &lt;?xml version=&quot;1.0&quot;?&gt; in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 188
+[10-Nov-2017 00:44:50 Europe/Istanbul] PHP Warning:  SimpleXMLElement::__construct():                      ^ in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 188
+[10-Nov-2017 00:44:50 Europe/Istanbul] PHP Fatal error:  Uncaught exception 'Exception' with message 'String could not be parsed as XML' in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php:188
+Stack trace:
+#0 /home/mustafa2/cs491-2.mustafaculban.net/api/api.php(188): SimpleXMLElement->__construct('<?xml version="...')
+#1 {main}
+  thrown in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 188
+[10-Nov-2017 00:51:24 Europe/Istanbul] PHP Fatal error:  Call to undefined function array_to_xml() in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[10-Nov-2017 00:51:25 Europe/Istanbul] PHP Fatal error:  Call to undefined function array_to_xml() in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[10-Nov-2017 01:14:07 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 5
+[10-Nov-2017 01:14:07 Europe/Istanbul] PHP Fatal error:  Call to undefined function toXML() in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 302
+[10-Nov-2017 01:14:52 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 5
+[10-Nov-2017 01:24:19 Europe/Istanbul] PHP Fatal error:  Class 'API' not found in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 132
+[10-Nov-2017 01:25:09 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ')', expecting variable (T_VARIABLE) in /home/mustafa2/cs491-2.mustafaculban.net/configApi/class.api.php on line 9
+[10-Nov-2017 02:09:53 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 256
+[10-Nov-2017 02:11:28 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 256
+[10-Nov-2017 02:13:13 Europe/Istanbul] PHP Notice:  Undefined variable: values in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 257
+[10-Nov-2017 02:13:28 Europe/Istanbul] PHP Notice:  Undefined variable: values in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 258
+[10-Nov-2017 02:13:41 Europe/Istanbul] PHP Notice:  Undefined variable: values in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 258
+[10-Nov-2017 02:14:25 Europe/Istanbul] PHP Notice:  Undefined variable: values in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 258
+[10-Nov-2017 02:15:15 Europe/Istanbul] PHP Notice:  Undefined index: name_surname in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 260
+[10-Nov-2017 02:16:01 Europe/Istanbul] PHP Notice:  Undefined index: name_surname in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 260
+[10-Nov-2017 02:17:41 Europe/Istanbul] PHP Notice:  Use of undefined constant item - assumed 'item' in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 258
+[10-Nov-2017 02:19:13 Europe/Istanbul] PHP Notice:  Undefined index: name_surname in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 258
+[10-Nov-2017 02:24:58 Europe/Istanbul] PHP Notice:  Undefined index: name_surname in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 258
+[10-Nov-2017 11:07:40 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 6
+[10-Nov-2017 11:07:53 Europe/Istanbul] PHP Notice:  Undefined variable: db in /home/mustafa2/cs491-2.mustafaculban.net/configApi/class.api.php on line 50
+[10-Nov-2017 11:07:53 Europe/Istanbul] PHP Fatal error:  Call to a member function getUserByEmailAndPassword() on null in /home/mustafa2/cs491-2.mustafaculban.net/configApi/class.api.php on line 50
+[10-Nov-2017 11:09:41 Europe/Istanbul] PHP Notice:  Undefined variable: db in /home/mustafa2/cs491-2.mustafaculban.net/configApi/class.api.php on line 50
+[10-Nov-2017 11:09:41 Europe/Istanbul] PHP Fatal error:  Call to a member function getUserByEmailAndPassword() on null in /home/mustafa2/cs491-2.mustafaculban.net/configApi/class.api.php on line 50
+[10-Nov-2017 11:19:50 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 6
+[10-Nov-2017 11:28:55 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 8
+[10-Nov-2017 11:29:30 Europe/Istanbul] PHP Notice:  Undefined index: name_surname in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 259
+[10-Nov-2017 11:29:46 Europe/Istanbul] PHP Notice:  Undefined index: name_surname in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 259
+[10-Nov-2017 11:45:03 Europe/Istanbul] PHP Notice:  Undefined variable: userEmails in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 265
+[10-Nov-2017 11:45:03 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 265
+[13-Nov-2017 15:23:01 Europe/Istanbul] PHP Deprecated:  preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead in /home/mustafa2/cs491-2.mustafaculban.net/configApi/class.phpmailer.php on line 1727
+[13-Nov-2017 15:24:34 Europe/Istanbul] PHP Deprecated:  preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead in /home/mustafa2/cs491-2.mustafaculban.net/configApi/class.phpmailer.php on line 1727
+[13-Nov-2017 15:24:35 Europe/Istanbul] PHP Deprecated:  preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead in /home/mustafa2/cs491-2.mustafaculban.net/configApi/class.phpmailer.php on line 1727
+[16-Nov-2017 18:57:30 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[17-Nov-2017 10:46:56 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[17-Nov-2017 10:58:57 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[17-Nov-2017 11:10:31 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[18-Nov-2017 10:55:40 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[18-Nov-2017 10:56:22 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[18-Nov-2017 10:57:34 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[18-Nov-2017 10:58:59 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[18-Nov-2017 15:32:35 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[18-Nov-2017 15:34:40 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[18-Nov-2017 15:35:38 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[18-Nov-2017 15:36:07 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[18-Nov-2017 15:36:31 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[18-Nov-2017 15:40:26 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[18-Nov-2017 15:40:50 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[18-Nov-2017 15:45:08 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[18-Nov-2017 15:46:26 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[18-Nov-2017 15:47:25 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[18-Nov-2017 15:48:40 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[18-Nov-2017 15:48:54 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[18-Nov-2017 15:49:01 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[18-Nov-2017 15:49:18 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[18-Nov-2017 15:49:54 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[18-Nov-2017 15:51:06 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[18-Nov-2017 15:52:29 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[18-Nov-2017 15:53:39 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[18-Nov-2017 15:54:12 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[18-Nov-2017 15:55:05 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 12:38:45 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 13:44:12 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 13:56:42 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:05:41 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:06:12 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:06:24 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:06:55 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:07:34 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:08:44 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:09:43 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:11:06 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:12:03 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:13:35 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:13:40 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:14:00 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:18:57 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:19:48 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:19:51 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:20:07 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:21:15 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:21:27 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:23:24 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:28:17 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:29:56 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:30:07 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:30:23 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:31:45 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:32:23 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:35:15 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:35:35 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:36:29 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:37:55 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:46:07 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 14:46:10 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 15:01:17 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 15:08:42 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 15:09:03 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 15:09:10 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 15:09:23 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[21-Nov-2017 15:14:43 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[24-Dec-2017 20:01:35 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[24-Dec-2017 20:01:43 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[31-Dec-2017 16:28:42 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[31-Dec-2017 16:43:11 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[31-Dec-2017 16:44:08 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[31-Dec-2017 16:44:54 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[31-Dec-2017 16:48:23 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[31-Dec-2017 16:49:20 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[31-Dec-2017 16:52:35 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[31-Dec-2017 16:54:11 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[31-Dec-2017 16:54:50 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[31-Dec-2017 16:56:55 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[31-Dec-2017 16:57:53 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[31-Dec-2017 16:58:17 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[24-Jan-2018 02:19:04 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '{' in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 293
+[24-Jan-2018 03:27:09 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[24-Jan-2018 03:30:24 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[24-Jan-2018 03:30:52 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[24-Jan-2018 03:31:05 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[24-Jan-2018 03:31:31 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[24-Jan-2018 03:32:25 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[24-Jan-2018 03:32:51 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[24-Jan-2018 03:34:06 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[24-Jan-2018 03:34:11 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[24-Jan-2018 03:34:28 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[24-Jan-2018 03:34:40 Europe/Istanbul] PHP Notice:  Undefined index: secretCode in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 7
+[24-Jan-2018 11:07:01 Europe/Istanbul] PHP Fatal error:  Call to a member function bind_param() on boolean in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 84
+[24-Jan-2018 11:07:48 Europe/Istanbul] PHP Fatal error:  Call to a member function bind_param() on boolean in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 84
+[24-Jan-2018 11:08:44 Europe/Istanbul] PHP Fatal error:  Call to a member function bind_param() on boolean in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 85
+[24-Jan-2018 11:11:11 Europe/Istanbul] PHP Fatal error:  Call to undefined function now() in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 81
+[24-Jan-2018 11:12:36 Europe/Istanbul] PHP Fatal error:  Call to undefined function now() in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 81
+[24-Jan-2018 11:33:34 Europe/Istanbul] PHP Fatal error:  Call to a member function bind_param() on boolean in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 119
+[24-Jan-2018 11:33:37 Europe/Istanbul] PHP Fatal error:  Call to a member function bind_param() on boolean in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 119
+[24-Jan-2018 11:34:05 Europe/Istanbul] PHP Fatal error:  Call to a member function bind_param() on boolean in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 119
+[24-Jan-2018 11:34:22 Europe/Istanbul] PHP Fatal error:  Call to a member function bind_param() on boolean in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 119
+[24-Jan-2018 17:50:38 Europe/Istanbul] PHP Notice:  Undefined variable: user in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 128
+[03-Feb-2018 15:34:22 Europe/Istanbul] PHP Warning:  strlen() expects parameter 1 to be string, array given in /home/mustafa2/cs491-2.mustafaculban.net/configApi/functions.php on line 22
+[03-Feb-2018 15:34:22 Europe/Istanbul] PHP Warning:  substr() expects parameter 1 to be string, array given in /home/mustafa2/cs491-2.mustafaculban.net/configApi/functions.php on line 31
+[03-Feb-2018 16:23:22 Europe/Istanbul] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 140
+[05-Feb-2018 13:55:57 Europe/Istanbul] PHP Notice:  Use of undefined constant result - assumed 'result' in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 122
+[05-Feb-2018 14:37:16 Europe/Istanbul] PHP Notice:  Use of undefined constant result - assumed 'result' in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 131
+[05-Feb-2018 14:38:18 Europe/Istanbul] PHP Notice:  Use of undefined constant result - assumed 'result' in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 131
+[05-Feb-2018 14:40:19 Europe/Istanbul] PHP Notice:  Use of undefined constant result - assumed 'result' in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 131
+[12-Feb-2018 01:27:11 Europe/Istanbul] PHP Warning:  scandir(/cs491-2.mustafaculban.net/api/): failed to open dir: No such file or directory in /home/mustafa2/cs491-2.mustafaculban.net/api/index.php on line 6
+[12-Feb-2018 01:27:12 Europe/Istanbul] PHP Warning:  scandir(): (errno 2): No such file or directory in /home/mustafa2/cs491-2.mustafaculban.net/api/index.php on line 6
+[12-Feb-2018 01:27:12 Europe/Istanbul] PHP Warning:  array_slice() expects parameter 1 to be array, boolean given in /home/mustafa2/cs491-2.mustafaculban.net/api/index.php on line 6
+[12-Feb-2018 01:27:13 Europe/Istanbul] PHP Warning:  scandir(/cs491-2.mustafaculban.net/api/): failed to open dir: No such file or directory in /home/mustafa2/cs491-2.mustafaculban.net/api/index.php on line 6
+[12-Feb-2018 01:27:13 Europe/Istanbul] PHP Warning:  scandir(): (errno 2): No such file or directory in /home/mustafa2/cs491-2.mustafaculban.net/api/index.php on line 6
+[12-Feb-2018 01:27:13 Europe/Istanbul] PHP Warning:  array_slice() expects parameter 1 to be array, boolean given in /home/mustafa2/cs491-2.mustafaculban.net/api/index.php on line 6
+[15-Feb-2018 14:34:10 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '{' in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 433
+[15-Feb-2018 14:34:12 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '{' in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 433
+[15-Feb-2018 14:36:03 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '{' in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 433
+[15-Feb-2018 15:08:39 Europe/Istanbul] PHP Warning:  Missing argument 1 for DB_Functions::getEvents(), called in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 494 and defined in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 222
+[15-Feb-2018 15:08:42 Europe/Istanbul] PHP Warning:  Missing argument 1 for DB_Functions::getEvents(), called in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 494 and defined in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 222
+[15-Feb-2018 15:14:09 Europe/Istanbul] PHP Fatal error:  Class 'DB_Functions' not found in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 21
+[15-Feb-2018 17:42:54 Europe/Istanbul] PHP Fatal error:  Call to a member function bind_param() on boolean in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 226
+[15-Feb-2018 17:44:32 Europe/Istanbul] PHP Fatal error:  Call to a member function bind_param() on boolean in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 226
+[15-Feb-2018 17:46:14 Europe/Istanbul] PHP Fatal error:  Call to a member function bind_param() on boolean in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 226
+[15-Feb-2018 17:47:59 Europe/Istanbul] PHP Fatal error:  Cannot pass parameter 6 by reference in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 226
+[15-Feb-2018 18:24:57 Europe/Istanbul] PHP Fatal error:  Cannot pass parameter 6 by reference in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 226
+[15-Feb-2018 21:17:21 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '$limit' (T_VARIABLE) in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 302
+[15-Feb-2018 21:17:22 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '$limit' (T_VARIABLE) in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 302
+[20-Feb-2018 15:20:37 Europe/Istanbul] PHP Notice:  Undefined variable: stmt in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 129
+[20-Feb-2018 15:20:37 Europe/Istanbul] PHP Fatal error:  Call to a member function execute() on null in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 129
+[20-Feb-2018 16:09:31 Europe/Istanbul] PHP Notice:  Undefined variable: stmt in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 129
+[20-Feb-2018 16:09:31 Europe/Istanbul] PHP Fatal error:  Call to a member function execute() on null in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 129
+[21-Feb-2018 18:54:05 Europe/Istanbul] PHP Notice:  Undefined variable: userPhones in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 305
+[21-Feb-2018 18:54:05 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 305
+[21-Feb-2018 18:54:54 Europe/Istanbul] PHP Notice:  Undefined variable: userPhones in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 305
+[21-Feb-2018 18:54:54 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 305
+[21-Feb-2018 19:31:20 Europe/Istanbul] PHP Notice:  Array to string conversion in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 306
+[21-Feb-2018 19:34:17 Europe/Istanbul] PHP Notice:  Array to string conversion in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 306
+[21-Feb-2018 19:37:18 Europe/Istanbul] PHP Fatal error:  Cannot use [] for reading in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 306
+[21-Feb-2018 19:37:55 Europe/Istanbul] PHP Notice:  Array to string conversion in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 306
+[21-Feb-2018 19:44:27 Europe/Istanbul] PHP Warning:  include(inc/db.php): failed to open stream: No such file or directory in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 430
+[21-Feb-2018 19:44:27 Europe/Istanbul] PHP Warning:  include(): Failed opening 'inc/db.php' for inclusion (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 430
+[21-Feb-2018 19:44:27 Europe/Istanbul] PHP Warning:  include(inc/firebase/firebase.php): failed to open stream: No such file or directory in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 431
+[21-Feb-2018 19:44:27 Europe/Istanbul] PHP Warning:  include(): Failed opening 'inc/firebase/firebase.php' for inclusion (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 431
+[21-Feb-2018 19:44:27 Europe/Istanbul] PHP Warning:  include(inc/firebase/push.php): failed to open stream: No such file or directory in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 432
+[21-Feb-2018 19:44:27 Europe/Istanbul] PHP Warning:  include(): Failed opening 'inc/firebase/push.php' for inclusion (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 432
+[21-Feb-2018 19:44:27 Europe/Istanbul] PHP Fatal error:  Class 'Firebase' not found in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 434
+[21-Feb-2018 19:44:50 Europe/Istanbul] PHP Warning:  include(inc/db.php): failed to open stream: No such file or directory in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 430
+[21-Feb-2018 19:44:50 Europe/Istanbul] PHP Warning:  include(): Failed opening 'inc/db.php' for inclusion (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 430
+[21-Feb-2018 19:44:50 Europe/Istanbul] PHP Warning:  include(inc/firebase/firebase.php): failed to open stream: No such file or directory in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 431
+[21-Feb-2018 19:44:50 Europe/Istanbul] PHP Warning:  include(): Failed opening 'inc/firebase/firebase.php' for inclusion (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 431
+[21-Feb-2018 19:44:50 Europe/Istanbul] PHP Warning:  include(inc/firebase/push.php): failed to open stream: No such file or directory in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 432
+[21-Feb-2018 19:44:50 Europe/Istanbul] PHP Warning:  include(): Failed opening 'inc/firebase/push.php' for inclusion (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 432
+[21-Feb-2018 19:44:50 Europe/Istanbul] PHP Fatal error:  Class 'Firebase' not found in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 434
+[21-Feb-2018 19:46:01 Europe/Istanbul] PHP Warning:  include(../api/firebase/inc/db.php): failed to open stream: No such file or directory in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 430
+[21-Feb-2018 19:46:01 Europe/Istanbul] PHP Warning:  include(): Failed opening '../api/firebase/inc/db.php' for inclusion (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 430
+[21-Feb-2018 19:46:01 Europe/Istanbul] PHP Warning:  include(../api/firebase/inc/firebase/firebase.php): failed to open stream: No such file or directory in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 431
+[21-Feb-2018 19:46:01 Europe/Istanbul] PHP Warning:  include(): Failed opening '../api/firebase/inc/firebase/firebase.php' for inclusion (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 431
+[21-Feb-2018 19:46:01 Europe/Istanbul] PHP Warning:  include(../api/firebase/inc/firebase/push.php): failed to open stream: No such file or directory in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 432
+[21-Feb-2018 19:46:01 Europe/Istanbul] PHP Warning:  include(): Failed opening '../api/firebase/inc/firebase/push.php' for inclusion (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 432
+[21-Feb-2018 19:46:01 Europe/Istanbul] PHP Fatal error:  Class 'Firebase' not found in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 434
+[21-Feb-2018 19:58:14 Europe/Istanbul] PHP Fatal error:  Call to undefined function pushHelper() in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 438
+[21-Feb-2018 20:09:13 Europe/Istanbul] PHP Fatal error:  Cannot use [] for reading in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 308
+[21-Feb-2018 20:09:42 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 308
+[21-Feb-2018 20:09:42 Europe/Istanbul] PHP Notice:  Undefined offset: 1 in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 308
+[21-Feb-2018 20:10:21 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 308
+[21-Feb-2018 20:10:24 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 308
+[21-Feb-2018 20:15:30 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '=' in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 306
+[21-Feb-2018 20:15:58 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '&&' (T_BOOLEAN_AND), expecting ')' in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 437
+[21-Feb-2018 20:38:56 Europe/Istanbul] PHP Notice:  Undefined variable: tokens in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 312
+[21-Feb-2018 20:38:56 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 435
+[21-Feb-2018 20:39:47 Europe/Istanbul] PHP Notice:  Undefined variable: tokens in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 312
+[21-Feb-2018 20:39:47 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 435
+[21-Feb-2018 20:47:45 Europe/Istanbul] PHP Fatal error:  Call to a member function bind_param() on boolean in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 505
+[21-Feb-2018 20:48:19 Europe/Istanbul] PHP Fatal error:  Call to a member function bind_param() on boolean in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 505
+[21-Feb-2018 20:50:36 Europe/Istanbul] PHP Fatal error:  Call to a member function bind_param() on boolean in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 505
+[21-Feb-2018 20:52:20 Europe/Istanbul] PHP Fatal error:  Call to a member function bind_param() on boolean in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 505
+[21-Feb-2018 20:53:50 Europe/Istanbul] PHP Fatal error:  Call to a member function bind_param() on boolean in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 505
+[21-Feb-2018 20:54:29 Europe/Istanbul] PHP Fatal error:  Call to a member function bind_param() on boolean in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 505
+[21-Feb-2018 21:09:52 Europe/Istanbul] PHP Warning:  Missing argument 2 for DB_Functions::getDeviceIDWithBloodType(), called in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 304 and defined in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 409
+[21-Feb-2018 21:09:52 Europe/Istanbul] PHP Notice:  Undefined variable: senderID in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 411
+[21-Feb-2018 21:10:51 Europe/Istanbul] PHP Warning:  Missing argument 2 for DB_Functions::getDeviceIDWithBloodType(), called in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 304 and defined in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 409
+[21-Feb-2018 21:10:51 Europe/Istanbul] PHP Notice:  Undefined variable: senderID in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 411
+[22-Feb-2018 23:41:08 Europe/Istanbul] PHP Notice:  Undefined index: notificationType in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 263
+[22-Feb-2018 23:41:08 Europe/Istanbul] PHP Notice:  Undefined index: notificationType in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 299
+[22-Feb-2018 23:41:08 Europe/Istanbul] PHP Notice:  Undefined index: notificationType in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 308
+[22-Feb-2018 23:41:13 Europe/Istanbul] PHP Notice:  Undefined index: notificationType in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 263
+[22-Feb-2018 23:41:13 Europe/Istanbul] PHP Notice:  Undefined index: notificationType in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 299
+[22-Feb-2018 23:41:13 Europe/Istanbul] PHP Notice:  Undefined index: notificationType in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 308
+[22-Feb-2018 23:46:40 Europe/Istanbul] PHP Notice:  Undefined index: senderID in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 315
+[22-Feb-2018 23:46:40 Europe/Istanbul] PHP Notice:  Undefined index: name_surname in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 320
+[22-Feb-2018 23:47:03 Europe/Istanbul] PHP Notice:  Undefined index: senderID in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 315
+[22-Feb-2018 23:47:03 Europe/Istanbul] PHP Notice:  Undefined index: name_surname in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 320
+[23-Feb-2018 00:42:10 Europe/Istanbul] PHP Notice:  Undefined index: senderID in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 315
+[23-Feb-2018 00:42:10 Europe/Istanbul] PHP Notice:  Undefined index: name_surname in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 320
+[23-Feb-2018 00:45:11 Europe/Istanbul] PHP Notice:  Undefined index: senderID in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 315
+[23-Feb-2018 00:45:11 Europe/Istanbul] PHP Notice:  Undefined index: name_surname in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 320
+[23-Feb-2018 01:30:48 Europe/Istanbul] PHP Parse error:  syntax error, unexpected end of file in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 664
+[23-Feb-2018 02:11:12 Europe/Istanbul] PHP Fatal error:  Cannot redeclare DB_Functions::addBlogPost() in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 583
+[23-Feb-2018 02:35:51 Europe/Istanbul] PHP Fatal error:  Call to a member function bind_param() on boolean in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 596
+[23-Feb-2018 03:03:25 Europe/Istanbul] PHP Fatal error:  Call to a member function bind_param() on boolean in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 562
+[23-Feb-2018 03:03:40 Europe/Istanbul] PHP Fatal error:  Call to a member function bind_param() on boolean in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 562
+[23-Feb-2018 03:04:08 Europe/Istanbul] PHP Fatal error:  Call to a member function bind_param() on boolean in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 562
+[23-Feb-2018 03:05:13 Europe/Istanbul] PHP Fatal error:  Call to a member function bind_param() on boolean in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 562
+[23-Feb-2018 03:05:36 Europe/Istanbul] PHP Fatal error:  Call to a member function bind_param() on boolean in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 562
+[23-Feb-2018 03:07:07 Europe/Istanbul] PHP Fatal error:  Cannot pass parameter 2 by reference in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 562
+[23-Feb-2018 03:26:47 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ')' in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 743
+[23-Feb-2018 12:53:02 Europe/Istanbul] PHP Fatal error:  Call to a member function bind_param() on boolean in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 770
+[23-Feb-2018 12:54:08 Europe/Istanbul] PHP Fatal error:  Call to a member function bind_param() on boolean in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 769
+[23-Feb-2018 12:55:32 Europe/Istanbul] PHP Fatal error:  Call to a member function bind_param() on boolean in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 780
+[23-Feb-2018 12:56:04 Europe/Istanbul] PHP Fatal error:  Call to a member function bind_param() on boolean in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 765
+[23-Feb-2018 13:55:25 Europe/Istanbul] PHP Warning:  Missing argument 3 for DB_Functions::getReceivedNotification(), called in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 860 and defined in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 833
+[23-Feb-2018 13:55:25 Europe/Istanbul] PHP Notice:  Undefined variable: type in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 840
+[23-Feb-2018 13:55:25 Europe/Istanbul] PHP Notice:  Undefined variable: type in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 841
+[23-Feb-2018 13:55:38 Europe/Istanbul] PHP Warning:  Missing argument 3 for DB_Functions::getReceivedNotification(), called in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 860 and defined in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 833
+[23-Feb-2018 13:55:38 Europe/Istanbul] PHP Notice:  Undefined variable: type in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 840
+[23-Feb-2018 13:55:38 Europe/Istanbul] PHP Notice:  Undefined variable: type in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 841
+[23-Feb-2018 13:57:08 Europe/Istanbul] PHP Warning:  Missing argument 3 for DB_Functions::getReceivedNotification(), called in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 860 and defined in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 833
+[23-Feb-2018 13:57:08 Europe/Istanbul] PHP Notice:  Undefined variable: type in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 840
+[23-Feb-2018 13:57:08 Europe/Istanbul] PHP Notice:  Undefined variable: type in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 841
+[23-Feb-2018 13:58:15 Europe/Istanbul] PHP Warning:  Missing argument 3 for DB_Functions::getReceivedNotification(), called in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 860 and defined in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 833
+[23-Feb-2018 13:58:15 Europe/Istanbul] PHP Notice:  Undefined variable: type in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 840
+[23-Feb-2018 13:58:15 Europe/Istanbul] PHP Notice:  Undefined variable: type in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 841
+[23-Feb-2018 13:58:17 Europe/Istanbul] PHP Warning:  Missing argument 3 for DB_Functions::getReceivedNotification(), called in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 860 and defined in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 833
+[23-Feb-2018 13:58:17 Europe/Istanbul] PHP Notice:  Undefined variable: type in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 840
+[23-Feb-2018 13:58:17 Europe/Istanbul] PHP Notice:  Undefined variable: type in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 841
+[23-Feb-2018 13:58:48 Europe/Istanbul] PHP Warning:  Missing argument 3 for DB_Functions::getReceivedNotification(), called in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 860 and defined in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 833
+[23-Feb-2018 13:58:48 Europe/Istanbul] PHP Notice:  Undefined variable: type in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 840
+[23-Feb-2018 13:58:48 Europe/Istanbul] PHP Notice:  Undefined variable: type in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 841
+[23-Feb-2018 13:59:15 Europe/Istanbul] PHP Warning:  Missing argument 3 for DB_Functions::getReceivedNotification(), called in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 860 and defined in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 833
+[23-Feb-2018 13:59:15 Europe/Istanbul] PHP Notice:  Undefined variable: type in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 840
+[23-Feb-2018 13:59:15 Europe/Istanbul] PHP Notice:  Undefined variable: type in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 841
+[23-Feb-2018 13:59:49 Europe/Istanbul] PHP Warning:  Missing argument 3 for DB_Functions::getReceivedNotification(), called in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 860 and defined in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 833
+[23-Feb-2018 13:59:49 Europe/Istanbul] PHP Notice:  Undefined variable: type in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 840
+[23-Feb-2018 13:59:49 Europe/Istanbul] PHP Notice:  Undefined variable: type in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 841
+[23-Feb-2018 14:00:21 Europe/Istanbul] PHP Warning:  Missing argument 3 for DB_Functions::getReceivedNotification(), called in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 860 and defined in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 833
+[23-Feb-2018 14:00:21 Europe/Istanbul] PHP Notice:  Undefined variable: type in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 840
+[23-Feb-2018 14:00:21 Europe/Istanbul] PHP Notice:  Undefined variable: type in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 841
+[23-Feb-2018 14:00:45 Europe/Istanbul] PHP Warning:  Missing argument 3 for DB_Functions::getReceivedNotification(), called in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 860 and defined in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 833
+[23-Feb-2018 14:00:45 Europe/Istanbul] PHP Notice:  Undefined variable: type in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 840
+[23-Feb-2018 14:00:45 Europe/Istanbul] PHP Notice:  Undefined variable: type in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 841
+[23-Feb-2018 14:01:11 Europe/Istanbul] PHP Warning:  Missing argument 3 for DB_Functions::getReceivedNotification(), called in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 860 and defined in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 833
+[23-Feb-2018 14:01:11 Europe/Istanbul] PHP Notice:  Undefined variable: type in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 840
+[23-Feb-2018 14:01:11 Europe/Istanbul] PHP Notice:  Undefined variable: type in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 841
+[23-Feb-2018 14:15:51 Europe/Istanbul] PHP Notice:  Undefined variable: sentNotifications in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 890
+[23-Feb-2018 14:16:13 Europe/Istanbul] PHP Notice:  Undefined variable: sentNotifications in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 890
+[23-Feb-2018 14:51:09 Europe/Istanbul] PHP Notice:  Undefined index: senderID in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 315
+[23-Feb-2018 14:51:09 Europe/Istanbul] PHP Notice:  Undefined index: name_surname in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 320
+[23-Feb-2018 14:51:26 Europe/Istanbul] PHP Notice:  Undefined index: senderID in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 315
+[23-Feb-2018 14:51:26 Europe/Istanbul] PHP Notice:  Undefined index: name_surname in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 320
+[23-Feb-2018 14:51:49 Europe/Istanbul] PHP Notice:  Undefined index: senderID in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 315
+[23-Feb-2018 14:51:49 Europe/Istanbul] PHP Notice:  Undefined index: name_surname in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 320
+[28-Feb-2018 19:54:10 Europe/Istanbul] PHP Notice:  Undefined variable: sentNotifications in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 930
+[28-Feb-2018 20:05:43 Europe/Istanbul] PHP Warning:  mysqli_stmt::bind_param(): Number of elements in type definition string doesn't match number of bind variables in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 549
+[28-Feb-2018 20:07:11 Europe/Istanbul] PHP Warning:  mysqli_stmt::bind_param(): Number of elements in type definition string doesn't match number of bind variables in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 549
+[28-Feb-2018 20:15:05 Europe/Istanbul] PHP Warning:  mysqli_stmt::bind_param(): Number of elements in type definition string doesn't match number of bind variables in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 549
+[28-Feb-2018 22:57:25 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '{' in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 975
+[28-Feb-2018 23:19:09 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ')' in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 1030
+[28-Feb-2018 23:19:42 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ')' in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 1030
+[28-Feb-2018 23:19:44 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '=' in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 1043
+[28-Feb-2018 23:19:44 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '=' in /home/mustafa2/cs491-2.mustafaculban.net/api/api.php on line 1043
+[28-Feb-2018 23:21:44 Europe/Istanbul] PHP Notice:  Undefined variable: dat in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 628
+[01-Mar-2018 00:07:24 Europe/Istanbul] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 631
+[01-Mar-2018 00:13:15 Europe/Istanbul] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 631
+[01-Mar-2018 00:19:29 Europe/Istanbul] PHP Notice:  Undefined variable: date in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 632
+[03-Mar-2018 00:10:09 Europe/Istanbul] PHP Notice:  Undefined variable: conn in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 27
+[03-Mar-2018 00:10:09 Europe/Istanbul] PHP Fatal error:  Call to a member function query() on null in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 27
+[03-Mar-2018 00:13:00 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ')' in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 28
+[03-Mar-2018 00:13:22 Europe/Istanbul] PHP Notice:  Undefined variable: oauthResult in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 00:13:22 Europe/Istanbul] PHP Fatal error:  Call to a member function fetch_assoc() on null in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 00:17:01 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 00:17:05 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 00:17:19 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 00:17:21 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 00:17:59 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 00:18:15 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 00:20:23 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 15:58:40 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 19:36:37 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 19:36:43 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 19:36:53 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 19:37:12 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 19:37:21 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 19:37:25 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 19:39:00 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 19:39:03 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 19:39:48 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 19:39:59 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 19:40:10 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 19:40:17 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 19:41:03 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 19:41:27 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 19:41:56 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 19:41:57 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 19:42:01 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 19:42:04 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 19:42:09 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 19:42:10 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 19:42:14 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 22:19:52 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 22:19:58 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 22:37:19 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 22:37:19 Europe/Istanbul] PHP Warning:  mysqli_stmt::bind_param(): Number of variables doesn't match number of parameters in prepared statement in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 984
+[03-Mar-2018 22:46:16 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 22:46:44 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 22:46:48 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 22:48:17 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 22:53:57 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 22:53:57 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 22:54:28 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 22:55:45 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 22:55:47 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 22:55:47 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 22:57:00 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 22:57:03 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 22:57:13 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 22:57:50 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 22:58:36 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 23:07:57 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 23:08:05 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 23:08:52 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 23:08:56 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 23:09:24 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 23:09:26 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 23:10:54 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 23:11:03 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 23:13:10 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 23:13:12 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 23:24:02 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 23:24:15 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 23:25:52 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 23:26:16 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 23:27:03 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 23:27:26 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 23:27:36 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 23:32:27 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 23:32:40 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 23:36:38 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 23:36:39 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 23:38:09 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 23:38:13 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[03-Mar-2018 23:45:47 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[05-Mar-2018 13:27:22 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[05-Mar-2018 13:27:24 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[05-Mar-2018 13:27:35 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[05-Mar-2018 13:27:40 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[05-Mar-2018 13:27:46 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[05-Mar-2018 13:27:48 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[05-Mar-2018 13:27:53 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[05-Mar-2018 13:27:55 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[05-Mar-2018 13:28:22 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
+[05-Mar-2018 13:28:34 Europe/Istanbul] PHP Notice:  Undefined variable: i in /home/mustafa2/cs491-2.mustafaculban.net/configApi/dbFunc.php on line 32
