@@ -563,7 +563,6 @@ class DB_Functions {
         
         if(mysqli_query($this->conn, $sql)){
             $msgID = mysqli_insert_id($this->conn);
-            echo $msgID;
             return $msgID;
         }
         else{
