@@ -15,12 +15,20 @@ require_once('../configApi/PushNotifications.php');
 
 $api = new API;
 $db = new DB_Functions();
+$adminTokens = $db->isInOauthIDs();
 
-if((isset($_GET['secretCode']) && $db->isInOauthIDs($_GET['secretCode']) )||(isset($_POST['secretCode']) && $db->isInOauthIDs($_POST['secretCode']) )){
+if((isset($_GET['secretCode']) && in_array($_GET['secretCode'],$adminTokens) )||(isset($_POST['secretCode']) && in_array($_POST['secretCode'],$adminTokens) )){
+	$adminToken = isset($_GET['secretCode']) ? $_GET['secretCode'] : $_POST['secretCode'];
+	$db->incrementTokenUsage($adminToken);
 	
-	 
-	 $requestParts = explode('/',$_GET['request']);
-	 $func = $requestParts[0];
+	foreach ($adminTokens as $key => $value) {
+		if($value == $adminToken){
+			$db->incrementTokenUsage($key);
+		}
+	}
+
+ 	$requestParts = explode('/',$_GET['request']);
+ 	$func = $requestParts[0];
 
 	// json response array
 	$response = array("error" => "FALSE");
@@ -81,29 +89,30 @@ if((isset($_GET['secretCode']) && $db->isInOauthIDs($_GET['secretCode']) )||(iss
 	}
 	elseif ($func == "register") {
 		
-		if (isset($_GET['username']) && isset($_GET['firstname']) && isset($_GET['surname'])&& isset($_GET['password'])&& isset($_GET['email'])&& isset($_GET['identityNum']) && isset($_GET['bloodType']) && isset($_GET['birthdate']) && isset($_GET['address'])  && isset($_GET['telephone'])) {
+		if ((isset($_GET['username']) && isset($_GET['firstname']) && isset($_GET['surname'])&& isset($_GET['password'])&& isset($_GET['email'])&& isset($_GET['identityNum']) && isset($_GET['bloodType']) && isset($_GET['birthdate']) && isset($_GET['address'])  && isset($_GET['telephone'])) ||
+			(isset($_POST['username']) && isset($_POST['firstname']) && isset($_POST['surname'])&& isset($_POST['password'])&& isset($_POST['email'])&& isset($_POST['identityNum']) && isset($_POST['bloodType']) && isset($_POST['birthdate']) && isset($_POST['address'])  && isset($_POST['telephone']))) {
 	 
 		    // receiving the post params
-		    $username = $_GET['username'];
-		    $firstname = $_GET['firstname'];
-		    $surname = $_GET['surname'];
-		    $password = $_GET['password'];
-		    $email = $_GET['email'];
-		    $identityNum = $_GET['identityNum'];
-		    $bloodType = $_GET['bloodType'];
-		    $birthdate = $_GET['birthdate'];
-		    $address = $_GET['address'];
-		    $telephone = $_GET['telephone'];
+		    $username = isset($_GET['username']) ? $_GET['username'] : $_POST['username'] ;
+		    $firstname = isset($_GET['firstname']) ? $_GET['firstname'] : $_POST['firstname'] ;
+		    $surname = isset($_GET['surname']) ? $_GET['surname'] : $_POST['surname'] ;
+		    $password = isset($_GET['password']) ? $_GET['password'] : $_POST['password'] ;
+		    $email = isset($_GET['email']) ? $_GET['email'] : $_POST['email'] ;
+		    $identityNum = isset($_GET['identityNum']) ? $_GET['identityNum'] : $_POST['identityNum'] ;
+		    $bloodType = isset($_GET['bloodType']) ? $_GET['bloodType'] : $_POST['bloodType'] ;
+		    $birthdate = isset($_GET['birthdate']) ? $_GET['birthdate'] : $_POST['birthdate'] ;
+		    $address = isset($_GET['address']) ? $_GET['address'] : $_POST['address'] ;
+		    $telephone = isset($_GET['telephone']) ? $_GET['telephone'] : $_POST['telephone'] ;
 		    
 		    if (!TcKimlikNoSorgula::tcKimlikNo($identityNum)->ad(($firstname))->soyad(($surname))->dogumYili(substr($birthdate, -4))->sorgula() /*  ||  there will be yabanci kimlik no check*/ ) {
-		         $response["errorr"] = TRUE;
+		         $response["error"] = TRUE;
 		        $response["error_msg"] = "This identitiy Number is fake";
 		        toXML($response);
 		    }
 		    // check if user is already existed with the same email
 		    else if ($db->isUserExisted($email)) {
 		        // user already existed
-		        $response["errorr"] = TRUE;
+		        $response["error"] = TRUE;
 		        $response["error_msg"] = "User already existed with email: " . $email. "and username: " .$username;
 		        toXML($response);
 			} 
@@ -112,7 +121,7 @@ if((isset($_GET['secretCode']) && $db->isInOauthIDs($_GET['secretCode']) )||(iss
 		        $user = $db->storeUser($username, $firstname, $surname, $password, $email, $identityNum, $bloodType, $birthdate, $address, $telephone);
 		        if ($user) {
 		            // user stored successfully
-		            $response["errorr"] = FALSE;
+		            $response["error"] = FALSE;
 		            $response["user"]["id"] = $user["id"];
 		            $response["user"]["username"] = $user["username"];
 		            $response["user"]["firstname"] = $user["firstname"];
@@ -127,14 +136,14 @@ if((isset($_GET['secretCode']) && $db->isInOauthIDs($_GET['secretCode']) )||(iss
 		        } 
 		        else {
 		            // user failed to store
-		            $response["errorr"] = TRUE;
+		            $response["error"] = TRUE;
 		            $response["error_msg"] = "Unknown error occurred in registration!";
 		            toXML($response);
 		        }
 		    }
 		} 
 		else {
-		    $response["errorr"] = TRUE;
+		    $response["error"] = TRUE;
 		    $response["error_msg"] = "Required parameters are missing!";
 		    toXML($response);
 		}
@@ -258,13 +267,14 @@ if((isset($_GET['secretCode']) && $db->isInOauthIDs($_GET['secretCode']) )||(iss
 
 	elseif ($func == "sendBloodRequest") {
 
-		if ((isset($_GET['notificationType']) && isset($_GET['bloodType']) && isset($_GET['hospitalName']) && isset($_GET['name_surname']) && isset($_GET['senderID'])) || (isset($_POST['notificationType']) && isset($_POST['bloodType']) && isset($_POST['hospitalName']) && isset($_POST['name_surname']) && isset($_POST['senderID']))){
+		if ((isset($_GET['notificationType']) && isset($_GET['bloodType']) && isset($_GET['hospitalName']) && isset($_GET['name_surname']) && isset($_GET['senderID']) && isset($_GET['locationID'])) || (isset($_POST['notificationType']) && isset($_POST['bloodType']) && isset($_POST['hospitalName']) && isset($_POST['name_surname']) && isset($_POST['senderID']) && isset($_POST['locationID']))){
 				
 				$notificationType = isset($_GET['notificationType']) ? $_GET['notificationType'] : $_POST['notificationType'];
 				$bloodType = isset($_GET['bloodType']) ? $_GET['bloodType'] : $_POST['bloodType'];
 				$hospitalName = isset($_GET['hospitalName']) ? $_GET['hospitalName'] : $_POST['hospitalName'];
 				$name_surname = isset($_GET['name_surname']) ? $_GET['name_surname'] : $_POST['name_surname'];
 				$senderID = isset($_GET['senderID']) ? $_GET['senderID'] : $_POST['senderID'];
+				$locationID = isset($_GET['locationID']) ? $_GET['locationID'] : $_POST['locationID'];
 
 			if($notificationType =='mail'){
 				$userEmails=$db->getUserWithBloodType($bloodType,$senderID);
@@ -296,7 +306,7 @@ if((isset($_GET['secretCode']) && $db->isInOauthIDs($_GET['secretCode']) )||(iss
 							}
 							else{
 								foreach ($userEmails as $key => $item) {
-									$db->saveBloodRequests($key, $senderID ,"mail", $msg_id);
+									$db->saveBloodRequests($key, $senderID , "mail", $msg_id, $locationID);
 									if($api->sendMail($item,$name_surname,$msg_data['msg'] ,"[BAIS-ANNC:BILKENT] COK COK ACIL KAN IHTIYACI") !== true){
 										$loop = 0;
 										break;
@@ -357,7 +367,7 @@ if((isset($_GET['secretCode']) && $db->isInOauthIDs($_GET['secretCode']) )||(iss
 				        	toXML($response);
 						}
 						else{
-							$returning = $db->sendPush($deviceTokens, $msg_data, $senderID, $msg_id);
+							$returning = $db->sendPush($deviceTokens, $msg_data, $senderID, $msg_id, $locationID);
 							if($returning == TRUE){
 								$response["error"] = "FALSE";
 					    		$response['success'] = "Message was sent to the nearby devices succesfully.";
@@ -405,8 +415,35 @@ if((isset($_GET['secretCode']) && $db->isInOauthIDs($_GET['secretCode']) )||(iss
 
 	}
 
+	elseif($func == "getUserToken"){
+		$uid = -1;
+		if(isset($_GET['uid']))
+			$uid = $_GET['uid'];
+		else if(isset($_POST['uid']))
+			$uid = $_POST['uid'];
+		else
+			$uid = $requestParts[1];
+
+		$userToken = $db->getUserTokenbyID($uid);
+		if($userToken != NULL)
+			toXML($userToken);
+		else{
+			$response["error"] = "TRUE";
+	    	$response['error_msg'] = "There is no user with the given ID.";
+	    	toXML($response);
+		}
+		
+	}
+
 	elseif($func == "getUser"){
-		$theUser = $db->getUserbyID($requestParts[1]);
+		$uid = 0;
+		if(isset($_GET['uid']))
+			$uid = $_GET['uid'];
+		else if(isset($_POST['uid']))
+			$uid = $_POST['uid'];
+		else
+			$uid = $requestParts[1];
+		$theUser = $db->getUserbyID($uid);
 		if($theUser !== NULL){
 			toXML($theUser);
 		}
@@ -545,9 +582,17 @@ if((isset($_GET['secretCode']) && $db->isInOauthIDs($_GET['secretCode']) )||(iss
 
 	elseif($func == "getEvent"){
 
-		if(isset($requestParts[1])){
+		$eid = 0;
+		if(isset($_GET['eid']))
+			$eid = $_GET['eid'];
+		else if(isset($_POST['eid']))
+			$eid = $_POST['eid'];
+		else
+			$eid = $requestParts[1];
 
-			$event = $db->getEventbyID($requestParts[1]);
+		if($eid != 0 ){
+
+			$event = $db->getEventbyID($eid);
 
 			if($event != NULL){
 				$response["error"] = "FALSE";
@@ -619,9 +664,16 @@ if((isset($_GET['secretCode']) && $db->isInOauthIDs($_GET['secretCode']) )||(iss
 
 	elseif($func == "getBlogPost"){
 
-		if(isset($requestParts[1])){
+		$pid = 0;
+		if(isset($_GET['pid']))
+			$pid = $_GET['pid'];
+		else if(isset($_POST['pid']))
+			$pid = $_POST['pid'];
+		else
+			$pid = $requestParts[1];
+		if($pid != 0){
 
-			$blogpost = $db->getBlogPostbyID($requestParts[1]);
+			$blogpost = $db->getBlogPostbyID($pid);
 
 			if($blogpost != NULL){
 				$response["error"] = "FALSE";
@@ -657,6 +709,44 @@ if((isset($_GET['secretCode']) && $db->isInOauthIDs($_GET['secretCode']) )||(iss
 		else{
 			$response["error"] = "TRUE";
 	    	$response['error_msg'] = "There are no posts in the system yet.";
+	    	toXML($response);
+		}
+	}
+
+	elseif($func == "getBloodCenter"){
+		if(isset($requestParts[1]) || isset($_GET['id']) || isset($_POST['id'])){
+			$id = isset($_GET['id']) ? $_GET['id'] : (isset($_POST['id']) ? $_POST['id'] : $requestParts[1]);
+			$bloodcenter = $db->getBloodCenterbyID($id);
+
+			if($bloodcenter != NULL){
+				$response["error"] = "FALSE";
+				$response['bloodcenter'] = $bloodcenter;
+				toXML($response);
+			}
+			else{
+				$response["error"] = "TRUE";
+			    $response['error_msg'] = "There is no blood center with the given ID.";
+			    toXML($response);
+			}
+		}
+		else{
+			$response["error"] = "TRUE";
+	    	$response['error_msg'] = "Missing Parameters.";
+	    	toXML($response);
+		}
+	}
+
+	elseif($func == "getBloodCenters"){
+		
+		$bloodcenters = $db->getBloodCenters();
+		if($bloodcenters != NULL){
+			$response["error"] = "FALSE";
+		    $response['bloodcenters'] = $bloodcenters;
+		    toXML($response);
+		}
+		else{
+			$response["error"] = "TRUE";
+	    	$response['error_msg'] = "There are no blood centers in the system yet.";
 	    	toXML($response);
 		}
 	}
@@ -760,16 +850,172 @@ if((isset($_GET['secretCode']) && $db->isInOauthIDs($_GET['secretCode']) )||(iss
 
 	}
 
-	elseif($func == "modifyEM5"){
-		if ((isset($_GET['ownerID']) &&  isset($_GET['id']) && isset($_GET['order']) ) || 
-			/*start of post*/
-			(isset($_POST['ownerID']) &&  isset($_POST['id']) && isset($_POST['order']) /*end of post*/) /*end of if*/) {
+	/*
+     * This is the newer version of EM5 list transactions such as creating list, adding person to the list
+     * accepting or rejecting a person in the list, or retrieving EM5 list of a person.
+     *
+    */
+    // THIS IS THE START OF THE NEWER VERSION EM5 //
+
+	elseif($func == "addToUsersEM5List"){
+		if ( (isset($_GET['uid']) &&  isset($_GET['email']) ) || (isset($_POST['uid']) &&  isset($_POST['email'])) /*end of post*/ /*end of if*/) {
 			
+			$uid = isset($_GET['uid']) ? $_GET['uid'] : $_POST['uid'];
+			$email = isset($_GET['email']) ? $_GET['email'] : $_POST['email'];
+			$requestedID = $db->getUserIdByEmail($email);
 
+			if($uid == $requestedID){
+				$response["error"] = "TRUE";
+			    $response['error_msg'] = "User cannot add himself or herself into EM5 List.";
+			    toXML($response);
+			}
+			else{
 
+				$addingResult = $db->addToPersonalEM5List($uid,$requestedID);
+
+				if($addingResult == 'alreadyExist'){
+					$response["error"] = "TRUE";
+				    $response['error_msg'] = "User you are trying to add your EM5 List is already in your list. Please choose another person.";
+				    toXML($response);
+				}
+				else if($addingResult == "FALSE"){
+					$response["error"] = "TRUE";
+				    $response['error_msg'] = "There is an database Error. Plase contact with administration.";
+				    toXML($response);
+				}
+
+				else if($addingResult == 'noNotification'){
+					$response["error"] = "TRUE";
+				    $response['error_msg'] = "There is an sending notification error. Please contact with administration.";
+				    toXML($response);
+				}
+
+				else if($addingResult == 'whileAdding'){
+					$response["error"] = "TRUE";
+				    $response['error_msg'] = "There is an error while adding query into database. Please contact with administration.";
+				    toXML($response);
+				}
+				
+
+				else if($addingResult == "TRUE"){
+					$response["error"] = "FALSE";
+				    $response['error_msg'] = "Request successfully sent to the user. Now all you need is to wait for the response from user.";
+				    toXML($response);
+				}
+			}
+			
+			
+		}
+		else{
+			$response["error"] = "TRUE";
+	    	$response['error_msg'] = "Missing Parameters.";
+	    	toXML($response);
 		}
 
 	}
+
+	elseif($func == "approvePersonalEM5ListRequest"){
+
+		if ( (isset($_GET['ownerID']) &&  isset($_GET['yourID']) &&  isset($_GET['choice'])) || (isset($_POST['ownerID']) &&  isset($_POST['yourID']) &&  isset($_POST['choice']) ) ) {
+			$choice = isset($_GET['choice']) ? $_GET['choice'] : $_POST['choice'];
+			if(!($choice == 1 ||$choice == -1)){
+				$response["error"] = "TRUE";
+		    	$response['error_msg'] = "Your choice must be '1' or '-1'. Plase try again.";
+		    	toXML($response);
+			}
+			else{
+				$ownerID = isset($_GET['ownerID']) ? $_GET['ownerID'] : $_POST['ownerID'];
+				$yourID = isset($_GET['yourID']) ? $_GET['yourID'] : $_POST['yourID'];
+				
+
+				$result = $db->approvePersonalEM5ListRequest($yourID, $ownerID, $choice);
+
+				if($result == "TRUE"){
+					$response["error"] = "FALSE";
+				    $response['success'] = "Your transaction is succesfully completed.";
+				    toXML($response);
+				}
+				else if($result == "itisyou"){
+					$response["error"] = "TRUE";
+				    $response['error_msg'] = "You cannot send your id in both fields.";
+				    toXML($response);
+				}
+				else{
+					$response["error"] = "TRUE";
+				    $response['error_msg'] = "There is a problem while changing status. Please try again later.";
+				    toXML($response);
+				}
+			}
+		}
+		else{
+			$response["error"] = "TRUE";
+	    	$response['error_msg'] = "Missing Parameters.";
+	    	toXML($response);
+		}
+	}
+
+	elseif($func == "getPersonalEM5List"){
+		if( isset($_POST['uid']) || isset($_GET['uid'])){
+			$uid = isset($_POST['uid']) ? $_POST['uid'] : $_GET['uid'];
+
+
+			$personalEM5List = $db->getPersonalEM5List($uid);
+
+			if($personalEM5List == 'zero'){
+				$response["error"] = "TRUE";
+			    $response['error_msg'] = "There is no people related to the given user id.";
+			    toXML($response);
+			}
+			elseif($personalEM5List == 'notexist'){
+				$response["error"] = "TRUE";
+			    $response['error_msg'] = "Person with a given id does not exist.";
+			    toXML($response);
+			}
+			else{
+				$response["error"] = "FALSE";
+		    	$response['em5List'] = $personalEM5List;
+		    	toXML($response);
+		    }
+		}
+		else{
+			$response["error"] = "TRUE";
+	    	$response['error_msg'] = "Missing Parameters.";
+	    	toXML($response);
+		}
+	}
+
+	elseif($func == "getPersonalWaitingEM5List"){
+		if( isset($_POST['uid']) || isset($_GET['uid'])){
+			$uid = isset($_POST['uid']) ? $_POST['uid'] : $_GET['uid'];
+
+
+			$personalWaitingEM5List = $db->getPersonalWaitingEM5List($uid);
+
+			if($personalWaitingEM5List == 'zero'){
+				$response["error"] = "TRUE";
+			    $response['error_msg'] = "There is no people related to the given user id.";
+			    toXML($response);
+			}
+			elseif($personalWaitingEM5List == 'notexist'){
+				$response["error"] = "TRUE";
+			    $response['error_msg'] = "Person with a given id does not exist.";
+			    toXML($response);
+			}
+			else{
+				$response["error"] = "FALSE";
+		    	$response['em5List'] = $personalWaitingEM5List;
+		    	toXML($response);
+		    }
+		}
+		else{
+			$response["error"] = "TRUE";
+	    	$response['error_msg'] = "Missing Parameters.";
+	    	toXML($response);
+		}
+	}
+
+	// THIS IS THE END OF THE NEWER VERSION OF EM5 //
+
 	elseif($func == "approveEM5Request"){
 
 		if ((isset($_GET['ownerID']) &&  isset($_GET['uid']) && isset($_GET['order']) && isset($_GET['choice'])) || 

@@ -22,19 +22,31 @@ class DB_Functions {
          
     }
  
-    function isInOauthIDs( $outhID){
+    function isInOauthIDs(){
         $oauth = array();
-        
-        $query = mysqli_query($this->conn, "SELECT token as OAuthToken FROM admin");
+        $i = 0;
+        $query = mysqli_query($this->conn, "SELECT token as OAuthToken,id as adminID FROM admin");
         
         if (mysqli_num_rows($query) > 0) {
             while($row = mysqli_fetch_assoc($query)){
-                $oauth[$i] = $row['OAuthToken'];
+                $oauth[$row['adminID']] = $row['OAuthToken'];
+                $i++;
                 
             }
         }
 
-        return  in_array($outhID,$oauth);
+        
+
+        return  $oauth;
+    }
+
+    public function incrementTokenUsage($id){
+
+        $query = mysqli_query($this->conn, "UPDATE tokenUsage SET count=count+1 WHERE adminID= '$id'");
+        
+        if($query)
+            return true;
+        return false;
     }
     /**
      * Storing new user
@@ -84,6 +96,36 @@ class DB_Functions {
             return false;
         }
     }
+
+
+    public function getUserIdByEmail($email) {
+
+        $id = NULL;
+
+        $stmt = $this->conn->prepare("SELECT id from user WHERE email = ?");
+ 
+        $stmt->bind_param("s", $email);
+ 
+        $stmt->execute();
+ 
+        $stmt->store_result();
+
+        $id = $this->fetchAssocStatement($stmt);
+        
+        if($stmt->num_rows <= 0)
+            return NULL;
+
+        if ($stmt->num_rows >= 1) {
+            // user existed 
+            $stmt->close();
+            return $id['id'];
+        } else {
+            // user not existed
+            $stmt->close();
+            return NULL;
+        }
+    }
+
  
     /**
      * Get user by email and password
@@ -129,23 +171,23 @@ class DB_Functions {
 
     public function saveFirebaseRegistrationID($token, $uid) {
         $stmtF = $this->conn->prepare("");
-
-        $flag = false;
-        $count = mysqli_query($this->conn, "SELECT count(*) as count FROM firebaseTokens WHERE token = '$token' AND uid= '$uid'");
+        $date = date('Y-m-d H:i:s');
+        $flag = 0;
+        $count = mysqli_query($this->conn, "SELECT count(*) as count FROM firebaseTokens WHERE uid= '$uid'");
         while($row = mysqli_fetch_assoc($count)){
             if($row["count"] > 0)
-                $flag = true;
+                $flag = 1;
         }
         $result = NULL;
-        if($flag) {
-            $stmt2 = $this->conn->prepare("UPDATE firebaseTokens set uid = ?, token = ? where uid = ?");
-            $stmt2->bind_param("sss",$uid, $token,$uid);
+        if($flag == 1) {
+            $stmt2 = $this->conn->prepare("UPDATE firebaseTokens set  token = ?, datestamp = ? where uid = ?");
+            $stmt2->bind_param("sss",$token,$date,$uid);
             $result = $stmt2->execute();
             $stmt2->close();
         }
         else{
-            $stmt = $this->conn->prepare("INSERT INTO firebaseTokens (uid, token) VALUES(?, ?)");
-            $stmt->bind_param("ss",$uid, $token);
+            $stmt = $this->conn->prepare("INSERT INTO firebaseTokens (token, uid, datestamp)  VALUES (?,?,?)");
+            $stmt->bind_param("sss",$token, $uid, $date);
             $result = $stmt->execute();
             $stmt->close();
         }
@@ -158,6 +200,35 @@ class DB_Functions {
         }
  
         
+    }
+
+
+     public function getUserTokenbyID($uid) {
+
+        $token = NULL;
+
+        $stmt = $this->conn->prepare("SELECT token from firebaseTokens WHERE uid = ?");
+ 
+        $stmt->bind_param("i", $uid);
+ 
+        $stmt->execute();
+ 
+        $stmt->store_result();
+
+        $token = $this->fetchAssocStatement($stmt);
+        
+        if($stmt->num_rows <= 0)
+            return NULL;
+
+        if ($stmt->num_rows >= 1) {
+            // user existed 
+            $stmt->close();
+            return $token;
+        } else {
+            // user not existed
+            $stmt->close();
+            return NULL;
+        }
     }
 
     function getUserbyID($id){
@@ -188,6 +259,8 @@ class DB_Functions {
         else
             return NULL;
     }
+
+
 
 
 
@@ -263,6 +336,63 @@ class DB_Functions {
             return NULL;
         }
     }
+
+
+        /*
+     Return the blood center with given ID
+    */
+
+     public function getBloodCenterbyID($id) {
+
+        $location = NULL;
+
+        $stmt = $this->conn->prepare("SELECT * from preDefinedLocations WHERE id = ?");
+ 
+        $stmt->bind_param("i", $id);
+ 
+        $stmt->execute();
+ 
+        $stmt->store_result();
+
+        $location = $this->fetchAssocStatement($stmt);
+        
+        if($stmt->num_rows <= 0)
+            return NULL;
+
+        if ($stmt->num_rows == 1) {
+            // user existed 
+            $stmt->close();
+            return $location;
+        } else {
+            // user not existed
+            $stmt->close();
+            return NULL;
+        }
+    }
+
+
+    /*
+    GET whole hospital, blood centers location
+    */
+    public function getBloodCenters() {
+        $locations = array();
+        $i = 0;
+        $query = mysqli_query($this->conn, "SELECT * FROM preDefinedLocations ORDER BY id ");
+        
+        if ($query) {
+            while($row = mysqli_fetch_assoc($query)){
+                $locations[$i] = $row;
+                $i++;
+            }
+
+            return $locations;
+        }
+ 
+         else {
+            return NULL;
+        }
+    }
+
     /*
         Add Blog Post 
     */
@@ -314,6 +444,8 @@ class DB_Functions {
             return NULL;
         }
     }
+
+
 
         /*
     GET most recently 10 posts
@@ -474,17 +606,20 @@ class DB_Functions {
      *  and message data which includes title and message
      */
 
-    function sendPush($tokens, $msg_data, $senderID, $msg_id){
+    function sendPush($tokens, $msg_data, $senderID, $msg_id, $locationID){
         include '../api/firebase/firebase.php';
         include '../api/firebase/push.php';
-
+        $payload = array();
+        $payload['team'] = 'xdxdxd';
+        $payload['score'] = '10';
+        $payload['click_action'] = "myReceivedNotificationActivity";
         $firebase = new Firebase();
         $push = new Push();
         $errors = array();
         $i = 0;
         foreach ($tokens as $key => $item) {  
-            $this->saveBloodRequests($key, $senderID ,"push", $msg_id);
-            $return = $this->pushHelper($item, $push, $firebase, $msg_data);
+            $this->saveBloodRequests($key, $senderID ,"push", $msg_id, $locationID);
+            $return = $this->EM5PushSender($item, $push, $firebase, $msg_data,$payload);
             $res = json_decode($return,true); 
             if($res['success'] != 1){
                 $errors[$i] = $item;
@@ -716,10 +851,10 @@ class DB_Functions {
     /**
      *  this function is used to store sent notification in database for analytics and privacy purposes.
      */
-    function saveBloodRequests($receiverID, $senderID, $type, $msg_id){
+    function saveBloodRequests($receiverID, $senderID, $type, $msg_id, $locationID){
 
-        $stmt = $this->conn->prepare("INSERT INTO bloodrequests (receiverID,senderID, type, msgID) VALUES (?, ?, ?, ?);");
-        $stmt->bind_param("iisi",$receiverID, $senderID, $type, $msg_id);
+        $stmt = $this->conn->prepare("INSERT INTO bloodrequests (receiverID,senderID, type, msgID,locationID) VALUES (?, ?, ?, ?,?);");
+        $stmt->bind_param("iisii",$receiverID, $senderID, $type, $msg_id, $locationID);
         $result = $stmt->execute();
         $stmt->close();
         
@@ -851,6 +986,195 @@ class DB_Functions {
  
         
     }
+    /*
+     * This is the newer version of EM5 list transactions such as creating list, adding person to the list
+     * accepting or rejecting a person in the list, or retrieving EM5 list of a person.
+     *
+    */
+    // THIS IS THE START OF THE NEWER VERSION EM5 //
+
+    function EM5PushSender($token, $push, $firebase ,$msg_data, $payload){
+
+
+    // optional payload
+        
+
+        // notification title
+        $title = $msg_data['title'];
+        
+        // notification message
+        $message = $msg_data['msg'];
+        
+
+        // push type - single user / topic
+        $push_type = isset($_GET['push_type']) ? $_GET['push_type'] : '';
+        
+        // whether to include to image or not
+        $include_image = isset($_GET['include_image']) ? TRUE : FALSE;
+
+
+        $push->setTitle($title);
+        $push->setMessage($message);
+        
+        $push->setImage('http://cs491-2.mustafaculban.net/images/push.png');
+        $push->setIsBackground(FALSE);
+        $push->setPayload($payload);
+
+
+        $json = '';
+        $response = '';
+
+        $json = $push->getPush();
+        $response = $firebase->send($token, $json);
+
+        return $response;
+    }
+
+    public function addToPersonalEM5List($uid, $requestedID){
+        $flag = FALSE;
+
+        $sql = "SELECT count(id) as count FROM em5Lists where ownerID =".$uid." and chosenID=".$requestedID;
+        
+        if ($query = mysqli_query($this->conn, $sql)) {
+            $res = mysqli_fetch_assoc($query);
+            if($res['count'] > 0)
+               return 'alreadyExist';
+            else{
+                $date = date('Y-m-d H:i:s');
+                $sql = "INSERT INTO em5Lists(ownerID, chosenID, status, datestamp) VALUES( '$uid', '$requestedID', '0', '$date' )";
+                if ($query = mysqli_query($this->conn, $sql)) {
+                    include '../api/firebase/firebase.php';
+                    include '../api/firebase/push.php';
+
+                    $firebase = new Firebase();
+                    $push = new Push();
+                    $ownerUser = $this->getUserbyID($uid);
+                    $msg_data['title'] = $ownerUser['firstname']. " ". $ownerUser['surname'] ." sizi EM5 Listesine Ekledi.";
+                    $msg_data['msg'] = "Please go to your EM5 waiting list and Reject or approve the user.";
+
+                    $payload = array();
+                    $payload['team'] = 'xdxdxd';
+                    $payload['score'] = '10';
+                    $payload['click_action'] = "EmergencyFiveTransactionActivity";
+
+                    $token = $this->getUserTokenbyID($requestedID);
+                    $result = $this->EM5PushSender($token['token'],$push, $firebase, $msg_data, $payload);
+
+                    $res = json_decode($result,true); 
+                    
+                    if($res['success'] == 1){
+                        return "TRUE";
+                    }
+                    else{
+                        return "noNotification";
+                    }
+
+                    
+                }
+                else{
+                    return "whileAdding";
+                }
+            }
+
+        }
+        else{
+            return "FALSE";
+        }
+
+    }
+
+    public function approvePersonalEM5ListRequest($yourID,$IDofWhoAddedYou, $choice){
+        if($yourID == $IDofWhoAddedYou){
+            return "itisyou";
+        }
+        else{
+            $query = "UPDATE em5Lists set status = ?, transactionDate = ? where chosenID = ? and ownerID = ?";
+            $date = date('Y-m-d H:i:s');
+            $stmt = $this->conn->prepare($query);
+            $stmt->bind_param("isii",$choice, $date, $yourID, $IDofWhoAddedYou );
+            $result = $stmt->execute();
+            $stmt->close();
+            if($result){
+                return "TRUE";
+            }
+            else{
+                return "FALSE";
+            }
+        }       
+    }
+
+    public function getPersonalWaitingEM5List($uid){
+        if(!$this->isUserExistedByID($uid))
+                    return "notexist";
+        else{
+
+            $em5List = array();
+            $em5List['ownerID'] = $uid;
+            $em5List['people'] = array();
+            $sql = "SELECT ownerID, status,datestamp, transactionDate from em5Lists WHERE chosenID=".$uid.";";
+            if($query = mysqli_query($this->conn, $sql)){
+
+                while ($row = mysqli_fetch_assoc($query)) {
+                    $sql = "SELECT user.id as id, concat(user.firstname, ' ', user.surname) as fullname, user.email as email, user.telephone as telephone from user WHERE id =".$row['ownerID'].";";
+                    $result = mysqli_query($this->conn, $sql);
+                    $aUser = mysqli_fetch_assoc($result);
+                    $aUser['status'] = $row['status'];
+                    $aUser['dateOfRequest'] = $row['datestamp'];
+                    $aUser['transactionDate'] = $row['transactionDate'];
+                    array_push($em5List['people'],$aUser);
+
+
+                } 
+
+                if(count($em5List['people']) == 0)
+                    return 'zero';
+
+
+                return $em5List;
+            }
+            
+
+
+        }
+
+
+    }
+
+    public function getPersonalEM5List($uid){
+        if(!$this->isUserExistedByID($uid))
+            return "notexist";
+        else{
+            $em5List = array();
+            $em5List['ownerID'] = $uid;
+            $em5List['people'] = array();
+            $sql = "SELECT chosenID, status,datestamp, transactionDate from em5Lists WHERE ownerID=".$uid.";";
+            if($query = mysqli_query($this->conn, $sql)){
+
+                while ($row = mysqli_fetch_assoc($query)) {
+                    $sql = "SELECT user.id as id, concat(user.firstname, ' ', user.surname) as fullname, user.email as email, user.telephone as telephone from user WHERE id =".$row['chosenID'].";";
+                    $result = mysqli_query($this->conn, $sql);
+                    $aUser = mysqli_fetch_assoc($result);
+                    $aUser['status'] = $row['status'];
+                    $aUser['dateOfRequest'] = $row['datestamp'];
+                    $aUser['transactionDate'] = $row['transactionDate'];
+                    array_push($em5List['people'],$aUser);
+
+
+                } 
+
+                if(count($em5List['people']) == 0)
+                    return 'zero';
+
+
+                return $em5List;
+            }
+        }
+
+    }
+
+    // THIS IS THE END OF THE NEWER VERSION OF EM5 //
+
+
 
     public function approveEM5Request($ownerID, $uid, $order, $choice) {
 
@@ -1068,7 +1392,8 @@ class DB_Functions {
         $receivedNotifications = array();
         $i = 0;
         $query = mysqli_query($this->conn, "SELECT bloodrequests.id, CONCAT(SUBSTR(bloodRequestsMessage.msg,1,100), '...') as msg, 
-                                                bloodrequests.senderID as sentUserID, bloodrequests.type, title, datestamp FROM bloodrequests join bloodRequestsMessage on bloodrequests.msgID = bloodRequestsMessage.id where bloodrequests.receiverID  = '$uid' ".$str." 
+                                                bloodrequests.senderID as sentUserID, bloodrequests.type, title, datestamp,preDefinedLocations.latitude as latitude, 
+                                                preDefinedLocations.longitude as longitude, preDefinedLocations.name as placeName  FROM bloodrequests join bloodRequestsMessage on bloodrequests.msgID = bloodRequestsMessage.id join preDefinedLocations on preDefinedLocations.id = bloodrequests.locationID where bloodrequests.receiverID  = '$uid' ".$str." 
                                             AND bloodrequests.id NOT IN (SELECT bloodreqID FROM awaitingDonor WHERE  donorID = bloodrequests.receiverID )
                                             AND bloodrequests.id NOT IN (SELECT bloodreqID FROM donorRejecting WHERE  donorID = bloodrequests.receiverID )
                                             AND bloodrequests.id NOT IN (SELECT bloodreqID FROM donors WHERE  donorID = bloodrequests.receiverID ) ORDER BY bloodRequestsMessage.datestamp  DESC LIMIT 0,".$limit.";"
@@ -1131,6 +1456,38 @@ class DB_Functions {
         return ($type == 'push') || ($type == 'mail') || ($type == 'sms');
 
     }
+
+
+
+    public function SAVEANDDELETE(){
+
+        $query = mysqli_query($this->conn, "INSERT INTO dailyAPIUsage
+                                            (
+                                                dailyAPIUsage.apiID, dailyAPIUsage.count, dailyAPIUsage.date
+                                            ) 
+                                            SELECT 
+                                                tokenUsage.adminID,
+                                                tokenUsage.count, 
+                                                CONCAT(CURDATE(), ' - ', CURTIME()) as datestamp
+                                            FROM tokenUsage
+                                            WHERE (tokenUsage.adminID = 3)");
+
+        if($query){
+            $query = mysqli_query($this->conn, "UPDATE tokenUsage set tokenUsage.count = 0 WHERE tokenUsage.adminID=3;
+ ");
+            if($query){
+                echo 'ok';
+            }
+            else{
+                echo 'nosecond';
+            }
+        }
+        else{
+            echo 'nofirst';
+        }
+        
+
+    }
     
 
 
@@ -1177,7 +1534,7 @@ class DB_Functions {
         }
 
         return null;
-}
+    }
  
 }
  
